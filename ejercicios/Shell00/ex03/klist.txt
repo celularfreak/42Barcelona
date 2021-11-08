@@ -1,0 +1,5 @@
+Credentials cache: API:E043593B-CD7D-4A6E-BC79-BA5C9D49DDEE
+        Principal: dnunez-m@42BARCELONA.COM
+
+  Issued                Expires             Flags    Principal
+Oct 25 15:42:10 2021  Oct 26 01:42:06 2021  FPIA   krbtgt/42BARCELONA.COM@42BARCELONA.COM
