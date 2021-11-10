@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:43:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/09 17:09:48 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2021/11/10 10:35:06 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -27,8 +27,8 @@ void	ft_hexa(int c, int err)
 	}
 	if (c >= 16)
 	{
-		ft_put_hexa(c / 16, 1);
-		ft_put_hexa(c % 16, 1);
+		ft_hexa(c / 16, 1);
+		ft_hexa(c % 16, 1);
 	}
 	else
 	{
@@ -40,8 +40,8 @@ void	ft_hexa(int c, int err)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

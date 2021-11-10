@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:18:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/08 18:52:34 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2021/11/10 13:06:49 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_printable(char *str)
 	control = 1;
 	while (str[i] != '\0')
 	{
-		if ((str[i] < 21 || str[i] > 126 ))
+		if (str[i] < ' ' || str[i] > '~')
 			control = 0;
 		i++;
 	}
