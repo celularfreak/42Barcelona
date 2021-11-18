@@ -9,8 +9,8 @@ struct s_map_config	readfile(char *map)
 	struct s_map_config map_config;
 
 	fd = open(map, O_RDONLY);
-	if (fd == NULL)
-		return NULL;
+	if (fd < 0)
+		return (null);
 	line = read_line(fd);
 	map_config = read_config(line);
 	free(line);
@@ -34,7 +34,7 @@ char	*read_line(int fd)
 	char	c[1];
 	char	*line;
 
-	line = (char *)malloc(4096);
+	line = (char *)malloc(sizeof(int));
 	if (line == NULL)
 		return NULL;
 	while (read(fd, c, 1) > 0 && c[0] != '\n')

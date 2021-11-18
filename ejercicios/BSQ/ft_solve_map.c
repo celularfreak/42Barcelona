@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:17:35 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/17 18:58:46 by aigarcia         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:57:25 by aigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -24,18 +24,19 @@ int	ft_low_number(int a, int b, int c)
 
 struct s_result ft_find_square(struct s_map_config config, int **map)
 {
-	struct s_resullt result;
+	struct s_result result;
 	int	x;
 	int	y;
 	int count;
 
 	count = 0;
 	y = 0;
-	result = ft_update_result(0. 0, 0);
+	x = 0;
+	result = ft_update_result(0, 0, 0);
 	while (y < config.lines)
 	{
 		if (map[y][x] != 0 && x != 0 && y != 0)
-			map[y][x] = ft_low_num(map[y -1][x - 1], map[y][x - 1], map[y - 1][x]) + 1;
+			map[y][x] = ft_low_number(map[y -1][x - 1], map[y][x - 1], map[y - 1][x]) + 1;
 		if (map[y][x] > count)
 		{
 			count = map[y][x];

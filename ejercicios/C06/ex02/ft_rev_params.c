@@ -1,22 +1,34 @@
-S/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 10:02:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/15 19:43:15 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/18 12:02:34 by dnunez-m          #+#    #+#             */
+/*   Updated: 2021/11/18 16:08:05 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
 
+void	ft_putstr(char *str)
 {
-	while (*s1 && *s2 == *s1)
+	while (*str)
 	{
-		++s1;
-		++s2;
+		write(1, str++, 1);
 	}
-	return (*s1 - *s2);
-}	
+}
+
+int	main(int argc, char **argv)
+{
+	int	x;
+
+	x = 1;
+	while (x < argc)
+	{
+		ft_putstr(argv[argc - x]);
+		ft_putstr("\n");
+		x++;
+	}
+}
