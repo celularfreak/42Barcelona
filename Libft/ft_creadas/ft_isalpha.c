@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int i)
+int	ft_isalpha(int c)
 {
 	int	control;
 
 	control = 1;
 
-	if ((i < 'A' || (i > 'Z' && i < 'a') || i > 'z'))
+	if ((c < 'A' || (c > 'Z' && c < 'a') || c > 'z'))
 		control = 0;
 	return (control);
 }

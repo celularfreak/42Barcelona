@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int	ft_isprint(int i)
+int	ft_isprint(int c)
 {
 	int	control;
 
 	control = 1;
-	if ((i < 32) || (i > 126))
+	if ((c < 32) || (c > 126))
 		control = 0;
 	return (control);
 }
