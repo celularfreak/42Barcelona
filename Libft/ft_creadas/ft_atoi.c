@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		mult;
@@ -19,6 +21,8 @@ int	ft_atoi(char *str)
 	num = 0;
 	mult = 1;
 	i = 0;
+	if (!str)
+		return(0);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 		|| str[i] == '\f' || str[i] == '\r')
 	{

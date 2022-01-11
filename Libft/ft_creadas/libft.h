@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-size_t	ft_strlen(const char *s)
+# include <unistd.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+
+typedef struct s_list
 {
-	size_t i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	void			*content;
+	struct s_list	*next;
 }
+
+int	ft_isalpha(int i);
+int	ft_isdigit(int i);
+int	ft_isalnum(int c);
+int	ft_isascii(int i);
+int	ft_isprint(int i);
+int	ft_atoi(const char *str);
+int	ft_tolower(int i);
+int	ft_toupper(int i);
+
+
+
+#endif
