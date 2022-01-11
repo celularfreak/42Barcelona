@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/08 19:47:24 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/08 19:48:46 by dnunez-m          #+#    #+#             */
+/*   Updated: 2021/11/08 19:55:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] > 96 && str[i] < 123 ))
-			str[i] = str[i] - 32;
-		i++;
-	}
-	return (str);
+int	ft_tolower(int i)
+{
+	if (i >= 'A' && i <= 'Z' )
+		i = i + 32;
+	return (i);
 }

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 18:18:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/10 13:06:49 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/08 15:27:40 by dnunez-m          #+#    #+#             */
+/*   Updated: 2021/11/08 17:26:27 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+#include "libft.h"
+
+int	ft_isalpha(int i)
 {
-	int	i;
 	int	control;
 
-	i = 0;
 	control = 1;
-	while (str[i] != '\0')
-	{
-		if (str[i] < ' ' || str[i] > '~')
-			control = 0;
-		i++;
-	}
+
+	if ((i < 'A' || (i > 'Z' && i < 'a') || i > 'z'))
+		control = 0;
 	return (control);
 }

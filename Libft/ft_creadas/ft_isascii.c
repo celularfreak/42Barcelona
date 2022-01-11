@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 12:21:45 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/17 15:14:15 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/08 18:18:39 by dnunez-m          #+#    #+#             */
+/*   Updated: 2021/11/10 13:06:49 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isascii(int i)
 {
-	size_t i;
+	int	control;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	control = 1;
+	if ((i < 0) || (i > 127))
+		control = 0;
+	return (control);
 }

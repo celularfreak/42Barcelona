@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:48:46 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/08 19:55:43 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/08 15:27:40 by dnunez-m          #+#    #+#             */
+/*   Updated: 2021/11/08 17:26:27 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] > 64 && str[i] < 91 ))
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (str);
+int	ft_isalnum(int c)
+{
+    int	control;
+
+	control = 1;
+
+	if ((c < '0') || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || (c > 'z'))
+		control = 0;
+	return (control);
 }
