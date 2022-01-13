@@ -14,10 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
 
 typedef struct s_list
 {
@@ -25,14 +21,14 @@ typedef struct s_list
 	struct s_list	*next;
 }
 
-int	ft_isalpha(int i);
-int	ft_isdigit(int i);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
 int	ft_isalnum(int c);
-int	ft_isascii(int i);
-int	ft_isprint(int i);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
 int	ft_atoi(const char *str);
-int	ft_tolower(int i);
-int	ft_toupper(int i);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 
 
