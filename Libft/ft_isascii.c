@@ -14,10 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	int	control;
-
-	control = 1;
 	if ((c < 0) || (c > 127))
-		control = 0;
-	return (control);
+		return (0);
+	return (1);
 }

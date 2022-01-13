@@ -14,11 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	int	control;
-
-	control = 1;
-
 	if ((c < 'A' || (c > 'Z' && c < 'a') || c > 'z'))
-		control = 0;
-	return (control);
+		return (0);
+	return (1);
 }
