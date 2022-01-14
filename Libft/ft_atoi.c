@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:45:40 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/17 15:07:22 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/14 15:31:53 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	ft_atoi(const char *str)
 	num = 0;
 	mult = 1;
 	i = 0;
-	if (!str)
-		return(0);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 		|| str[i] == '\f' || str[i] == '\r')
 	{

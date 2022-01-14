@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:21:45 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/17 15:14:15 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/14 15:42:39 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -29,7 +23,5 @@ int	ft_isprint(int c);
 int	ft_atoi(const char *str);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
-
-
 
 #endif
