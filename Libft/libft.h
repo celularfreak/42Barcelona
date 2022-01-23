@@ -23,5 +23,8 @@ int	ft_isprint(int c);
 int	ft_atoi(const char *str);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
+void	ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+size_t	ft_strlen(const char *s);
 
 #endif
