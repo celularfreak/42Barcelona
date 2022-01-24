@@ -6,19 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 10:46:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/15 11:10:13 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/24 11:01:04 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
