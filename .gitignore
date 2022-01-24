@@ -3,3 +3,5 @@
 *.a
 libft-unit-test
 *.swp
+.DS_Store
+
