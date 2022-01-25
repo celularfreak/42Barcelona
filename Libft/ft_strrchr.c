@@ -6,8 +6,23 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 10:08:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/25 10:15:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/25 11:49:59 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "li"
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int	len;
+
+	len = ft_strlen((char *)s);
+	if (((char)c) == '\0')
+		return ((char *)(&s[len]));
+	while (--len >= 0)
+	{
+		if (s[len] == (char)c)
+			return ((char *)(&s[len]));
+	}
+	return (NULL);
+}
