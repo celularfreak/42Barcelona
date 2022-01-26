@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:45:40 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/26 12:44:05 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/26 14:29:10 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int	ft_atoi(const char *str)
 	else if (str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
+		num = num * 10 + (str[i++] - 48);
 	return (num * mult);
 }
