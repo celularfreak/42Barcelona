@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:21:45 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/28 11:02:19 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:19:27 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strdup(const char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
