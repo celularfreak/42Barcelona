@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 15:46:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/30 16:35:28 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/01/30 16:45:41 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
-	}
+int	size(int n)
+{	
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
+		len++;
+	while (n)
 	{
-		ft_putchar_fd('-', fd);
-		n = -n;
+		n /= 10;
+		len++;
 	}
-	if (n >= 10)
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	str = (char *)malloc(sizeof(*str) * (size(n) + 1));
+	if (!str)
+		return (NULL);
+	while (str[i] <= size(n))
 	{
-		ft_putnbr_fd((n / 10), fd);
-		n = n % 10;
+		ft_putnbr_fd(n / 10, str[i]);
+		i++;
 	}
-	if (n < 10)
-	{
-		ft_putchar_fd((n + 48), fd);
-	}
+	str[i] = '\0';
+	return (str);
 }
