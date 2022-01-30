@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:02:32 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/28 16:27:42 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/30 12:04:08 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
-
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	dest = malloc(sizeof(char) * ((ft_strlen(s1)+(ft_strlen(s2))) + 1));
