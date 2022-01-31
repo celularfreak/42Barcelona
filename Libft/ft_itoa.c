@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/30 16:45:41 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:06:39 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,22 @@ char	*ft_itoa(int n)
 	int		i;
 
 	size = ft_size(n);
-	str = malloc(sizeof(char) * (size + 1));
+	str = ft_calloc(sizeof(char), (size + 1));
 	if (!str)
 		return (NULL);
-	str[size] = '\0';
+	i = 0;
 	if (n < 0)
 	{
 		str[0] = '-';
 		i = 1;
 	}
-	else
-		i = 0;
 	while (size-- > i)
+	{
 		if (n < 0)
-		{
 			str[size] = '0' + n % 10 * (-1);
-			n = n / 10;
-		}
 		else
-		{
 			str[size] = '0' + n % 10;
-			n = n / 10;
-		}
-	return	(str);
+		n = n / 10;
+	}
+	return (str);
 }
