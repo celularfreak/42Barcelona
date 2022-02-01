@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 01:18:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/01 15:36:08 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/02/01 15:40:57 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/01 16:53:44 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*i;
+	t_list	*begin;
+	t_list	*work;
 
-	while (*lst)
+	if (lst != NULL && f != NULL)
 	{
-		i = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = i;
+		begin = ft_lstnew(f(lst->content));
+		work = begin;
+		while (lst->next)
+		{
+			lst = lst->next;
+			if ((work->next = ft_lstnew(ft_strdup(f(lst->content)))) == NULL)
+			{
+				ft_lstclear(&begin, del);
+				return (NULL);
+			}
+			work = work->next;
+		}
+		return (begin);
 	}
-	*lst = NULL;
+	return (NULL);
 }
