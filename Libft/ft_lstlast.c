@@ -6,13 +6,13 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 01:04:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/01 01:04:57 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/01 12:41:19 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
