@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 00:31:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/01 00:31:39 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/01 12:41:31 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *list;
+	t_list	*list;
 
 	list = (t_list *)malloc(sizeof(t_list));
 	if (!list)

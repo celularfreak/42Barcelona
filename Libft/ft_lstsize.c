@@ -6,21 +6,21 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 00:53:08 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/01 00:53:08 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/01 12:42:07 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	
+
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		lst = lst->next;
-		i++; 
+		i++;
 	}
 	return (i);
 }
