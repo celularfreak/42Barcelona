@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/10 15:05:01 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/11 10:17:44 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,20 @@ t_print	*ft_inistruckt(t_print *tab)
 
 int	ft_printf(const char *format, ...)
 {
+	int		i;
+	int		ret;
 	t_print	*tab;
 
 	tab = (t_print *)malloc(sizeof(t_print));
 	if (!tab)
 		return (-1);
-	ft_initialise_tab(tab);
+	ft_inistruckt(tab);
+	va_start(tab->args, format);
+	i = -1;
+	ret = 0;
+	while (format[++i])
+	{
+		if (format[i] == '%')
+			
+	}
 }

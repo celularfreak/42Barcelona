@@ -6,12 +6,12 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:01:31 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/02/09 13:42:30 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/02/11 10:06:50 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = ./srcs/ 
+SRCS = ./srcs/ ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 NAME = libftprint.a
