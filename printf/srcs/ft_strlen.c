@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/14 17:00:03 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/15 12:21:45 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/14 17:00:05 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libftprintf.h"
 
-int	ft_printf(const char *format, ...)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
-	int		ret;
-	va_list	args;
+	size_t	i;
 
-	i = -1;
-	ret = 0;
-	va_start(args, format);
-	while (format[++i])
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (format[i] == '%')
-		i = ft_format(args, format[i + 1]);
-		else
-			ret += ft_putchar(&format[i]);
+		i++;
 	}
-	va_end(args);
-	return (ret);
-}
-
-int	ft_format(va_list args, const char *format)
-{
-	if (format == 'c')
-		ft_putchar(va_args(args, int));
-	if (var == 's')
-		ft_putstr(*format);
-	
-		
-
+	return (i);
 }
