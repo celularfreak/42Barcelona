@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/11 10:17:44 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:30:56 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 t_print	*ft_inistruckt(t_print *tab)
 {
-	tab->wdt = 0;
-	tab->prc = 0;
-	tab->zero = 0;
-	tab->pnt = 0;
-	tab->sign = 0;
-	tab->tl = 0;
-	tab->is_zero = 0;
-	tab->dash = 0;
-	tab->perc = 0;
-	tab->sp = 0;
+	tab->size = 0;
 	return (tab);
 }
 
@@ -43,6 +34,13 @@ int	ft_printf(const char *format, ...)
 	while (format[++i])
 	{
 		if (format[i] == '%')
-			
+			i = ft_format(tab, format, i + 1);
+		else
+			ret += ft_putchar_fd(&format[i], 1);
 	}
+	va_end(tab->args);
+	ret += tab ->size;
+	free (tab);
+	return (ret);
+
 }
