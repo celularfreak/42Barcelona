@@ -15,10 +15,11 @@
 
 # include	<unistd.h>
 # include	<stdarg.h>
+# include	<stdlib.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_format(const char *format, int var);
-int	ft_putstr(char *s);
-size_t	ft_strlen(const char *s);
-int	ft_putchar(char c);
+int		ft_printf(const char *format, ...);
+int		ft_format(va_list args, const char format);
+int		ft_putstr(char *s);
+int		ft_putchar(int c);
+int		ft_putcent(void);
 #endif
