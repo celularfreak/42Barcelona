@@ -12,33 +12,45 @@
 
 #include	"libftprintf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char* format, ...)
 {
 	int		i;
-	int		ret;
+	int		size;
 	va_list	args;
 
 	i = -1;
-	ret = 0;
+	size = 0;
 	va_start(args, format);
 	while (format[++i])
 	{
 		if (format[i] == '%')
-		i = ft_format(args, format[i + 1]);
+		size += ft_format(args, format[i + 1]);
 		else
-			ret += ft_putchar(&format[i]);
+			size += ft_putchar(format[i]);
 	}
 	va_end(args);
-	return (ret);
+	return (size);
 }
 
-int	ft_format(va_list args, const char *format)
+int	ft_format(va_list args, const char format)
 {
+	int	size;
+
+	size = 0;
 	if (format == 'c')
-		ft_putchar(va_args(args, int));
-	if (var == 's')
-		ft_putstr(*format);
-	
-		
+		size += ft_putchar(va_arg(args,int));
+	else if (format == 's')
+		size += ft_putstr(va_arg(args, char *));
+	else if (format == 'p')
+		size += ft_putptr(va_arg(args, unsigned long long));
+	else if (format == 'd' || format == 'i')
+		size += ft_putnbr(va_arg(args, int));
+	else if (format == 'u')
+		size += ft_putnbr_unsig(va_arg(args, unsigned int));
+	else if (format == 'x' || format == 'X')
+		size += ft_puthex(va_arg(args, unsigned int), format);
+	else if (format == '%')
+		size += ft_putcent();
+	return (size);
 
 }
