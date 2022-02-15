@@ -29,8 +29,10 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
+		{
 			size += ft_putchar_printf(format[i]);
 			i++;
+		}
 	}
 	va_end(args);
 	return (size);
