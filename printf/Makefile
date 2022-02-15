@@ -13,7 +13,8 @@
 
 SRCS = ./srcs/ft_printf.c ./srcs/ft_putcent_printf.c ./srcs/ft_putchar_printf.c ./srcs/ft_putstr_printf.c \
 		./srcs/ft_itoa.c ./srcs/ft_itoa_unsigned.c ./srcs/ft_calloc.c ./srcs/ft_putnbr_printf.c \
-		./srcs/ft_putnbr_unsig_printf.c ./srcs/ft_bzero.c ./srcs/ft_memset.c
+		./srcs/ft_putnbr_unsig_printf.c ./srcs/ft_bzero.c ./srcs/ft_memset.c ./srcs/ft_putptr.c \
+		./srcs/ft_putchar.c ./src/ft_puthex_printf.c
 
 OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
