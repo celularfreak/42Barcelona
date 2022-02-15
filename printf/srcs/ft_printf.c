@@ -51,8 +51,8 @@ int	ft_format(va_list args, const char format)
 		size += ft_putnbr_printf(va_arg(args, int));
 	else if (format == 'u')
 		size += ft_putnbr_unsig_printf(va_arg(args, unsigned int));
-	//else if (format == 'x' || format == 'X')
-		//size += ft_puthex_printf(va_arg(args, unsigned int), format);
+	else if (format == 'x' || format == 'X')
+		size += ft_puthex_printf(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		size += ft_putcent_printf();
 	return (size);
