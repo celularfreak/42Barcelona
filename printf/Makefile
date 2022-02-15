@@ -22,7 +22,7 @@ NAME = libftprintf.a
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-#.c.o: ${CC} ${CFLAGS} -I ft_printf.h -c $< -o ${<:.c=.o}
+.c.o: ${CC} ${CFLAGS} -I ft_printf.h -c $< -o ${<:.c=.o}
 
 all:			$(NAME)
 
