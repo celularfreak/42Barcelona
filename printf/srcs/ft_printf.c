@@ -6,11 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 09:47:08 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:35:16 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../libftprintf.h"
+#include	"../ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -41,14 +41,14 @@ int	ft_format(va_list args, const char format)
 		size += ft_putchar_printf(va_arg(args, int));
 	else if (format == 's')
 		size += ft_putstr_printf(va_arg(args, char *));
-	else if (format == 'p')
-		size += ft_putptr(va_arg(args, unsigned long long));
+	//else if (format == 'p')
+		//size += ft_putptr_printf(va_arg(args, unsigned long long));
 	else if (format == 'd' || format == 'i')
 		size += ft_putnbr_printf(va_arg(args, int));
 	else if (format == 'u')
 		size += ft_putnbr_unsig_printf(va_arg(args, unsigned int));
-	else if (format == 'x' || format == 'X')
-		size += ft_puthex_printf(va_arg(args, unsigned int), format);
+	//else if (format == 'x' || format == 'X')
+		//size += ft_puthex_printf(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		size += ft_putcent_printf();
 	return (size);

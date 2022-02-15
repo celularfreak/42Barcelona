@@ -6,11 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/31 18:16:58 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:35:11 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../ft_printf.h"
 
 int	ft_size(int n)
 {	

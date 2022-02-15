@@ -6,11 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 21:34:34 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 09:47:01 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:35:23 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include	"../ft_printf.h"
 
 int	ft_putcent(void)
 {
