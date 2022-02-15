@@ -45,8 +45,8 @@ int	ft_format(va_list args, const char format)
 		size += ft_putchar_printf(va_arg(args, int));
 	else if (format == 's')
 		size += ft_putstr_printf(va_arg(args, char *));
-	//else if (format == 'p')
-		//size += ft_putptr_printf(va_arg(args, unsigned long long));
+	else if (format == 'p')
+		size += ft_putptr_printf(va_arg(args, unsigned long long));
 	else if (format == 'd' || format == 'i')
 		size += ft_putnbr_printf(va_arg(args, int));
 	else if (format == 'u')
