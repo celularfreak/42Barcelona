@@ -6,13 +6,13 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 11:35:06 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 12:10:08 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../ft_printf.h"
 
-int	ft_size(unsigned int n)
+int	ft_size_un(unsigned int n)
 {	
 	int	len;
 
@@ -30,7 +30,7 @@ char	*ft_itoa_unsigned(unsigned int n)
 	char	*str;
 	int		size;
 
-	size = ft_size(n);
+	size = ft_size_un(n);
 	str = ft_calloc(sizeof(char), (size + 1));
 	if (!str)
 		return (NULL);

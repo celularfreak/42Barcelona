@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:05:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 11:35:47 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 12:29:40 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ char				*ft_itoa(int n);
 char				*ft_itoa_unsigned(unsigned int n);
 void				*ft_calloc(size_t count, size_t size);
 void				ft_bzero(void *s, size_t n);
+void				*ft_memset(void *s, int c, size_t n);
 #endif
