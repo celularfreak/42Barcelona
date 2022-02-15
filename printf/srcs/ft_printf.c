@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/14 17:01:27 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/15 08:44:42 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_format(va_list args, const char format)
 
 	size = 0;
 	if (format == 'c')
-		size += ft_putchar(va_arg(args,int));
+		size += ft_putchar(va_arg(args, int));
 	else if (format == 's')
 		size += ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
