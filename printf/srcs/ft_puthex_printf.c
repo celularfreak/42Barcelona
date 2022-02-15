@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	"../ft_printf.h"
+
 int	ft_hex_size(unsigned	int num)
 {
 	int	size;
