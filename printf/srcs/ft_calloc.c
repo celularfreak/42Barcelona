@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_printf.c                                 :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 15:46:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 11:35:34 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/01/26 14:36:02 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 11:34:59 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../ft_printf.h"
 
-int	ft_putnbr_printf(int n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		size;
-	char	*num;
+	void	*x;
 
-	size = 0;
-	num = ft_itoa(n);
-	size = ft_putstr_printf(num);
-	free(num);
-	return (size);
+	x = malloc(count * size);
+	if (!x)
+		return (NULL);
+	ft_bzero(x, (count * size));
+	return (x);
 }

@@ -6,21 +6,22 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:01:31 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/02/15 09:26:55 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/02/15 11:40:21 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = ./srcs/ft_printf.c ./srcs/ft_putcent.c ./srcs/ft_putchar.c ./srcs/ft_putstr.c
+SRCS = ./srcs/ft_printf.c ./srcs/ft_putcent_printf.c ./srcs/ft_putchar_printf.c ./srcs/ft_putstr_printf.c \
+		./srcs/ft_itoa.c ./srcs/ft_itoa_unsigned.c ./srcs/ft_calloc.c ./srcs/ft_putnbr_printf.c \
+		./srcs/ft_putnbr_unsig_printf.c
 
 OBJS = $(SRCS:.c=.o)
-NAME = libftprint.a
-
+NAME = ft_print.a
 
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-NAME = libftprint.a
+.c.o: ${CC} ${CFLAGS} -I includes/ft_printf.h -c $< -o ${<:.c=.o}
 
 all:			$(NAME)
 

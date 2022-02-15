@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 15:05:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 09:49:04 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 11:35:06 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include	"../ft_printf.h"
 
-# include	<unistd.h>
-# include	<stdarg.h>
-# include	<stdlib.h>
+int	ft_size(unsigned int n)
+{	
+	int	len;
 
-int		ft_printf(const char *format, ...);
-int		ft_format(va_list args, const char format);
-int		ft_putstr_printf(char *s);
-int		ft_putchar_printf(int c);
-int		ft_putcent_printf(void);
-char	*ft_itoa(int n);
-#endif
+	len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa_unsigned(unsigned int n)
+{
+	char	*str;
+	int		size;
+
+	size = ft_size(n);
+	str = ft_calloc(sizeof(char), (size + 1));
+	if (!str)
+		return (NULL);
+	while (n != 0)
+	{
+		str[size  - 1] = '0' + n % 10;
+		n = n / 10;
+		size--;
+	}
+	return (str);
+}
