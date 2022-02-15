@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putnbr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 15:05:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 09:49:04 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/02 15:46:54 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 09:47:09 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "../libftprintf.h"
 
-# include	<unistd.h>
-# include	<stdarg.h>
-# include	<stdlib.h>
-
-int		ft_printf(const char *format, ...);
-int		ft_format(va_list args, const char format);
-int		ft_putstr_printf(char *s);
-int		ft_putchar_printf(int c);
-int		ft_putcent_printf(void);
-char	*ft_itoa(int n);
-#endif
+int	ft_putnb(int n)
+{
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return (11);
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr((n / 10));
+		n = n % 10;
+	}
+	if (n < 10)
+	{
+		ft_putchar((n + 48));
+	}
+}

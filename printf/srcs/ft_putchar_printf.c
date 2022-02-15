@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_printf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:22:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 08:44:52 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/10/29 15:10:06 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 09:47:03 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libftprintf.h"
+#include	"../libftprintf.h"
 
-int	ft_putstr(char *s)
+int	ft_putchar(int c)
 {
-	if (!s)
-		return ;
-	write(1, s, ft_strlen(s));
-	return (ft_strlen(s));
+	write(1, &c, 1);
+	return (1);
 }
