@@ -6,12 +6,12 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:01:31 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/02/11 10:06:50 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/02/15 09:26:55 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = ./srcs/ ft_printf.c
+SRCS = ./srcs/ft_printf.c ./srcs/ft_putcent.c ./srcs/ft_putchar.c ./srcs/ft_putstr.c
 
 OBJS = $(SRCS:.c=.o)
 NAME = libftprint.a
@@ -20,7 +20,7 @@ NAME = libftprint.a
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-NAME = libft.a
+NAME = libftprint.a
 
 all:			$(NAME)
 
