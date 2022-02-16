@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:25:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 12:29:40 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:39:24 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-		{
 			size += ft_putchar_printf(format[i]);
 			i++;
-		}
 	}
 	va_end(args);
 	return (size);
