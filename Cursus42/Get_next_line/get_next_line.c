@@ -6,7 +6,14 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/22 10:20:54 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:04:22 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+
+char	*get_next_line(int fd)
+{
+
+}
