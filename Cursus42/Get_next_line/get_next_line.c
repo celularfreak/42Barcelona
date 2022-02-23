@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/23 16:41:01 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:52:31 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,31 @@ char	*funcion1(int fd, char *accu)
 	return (accu);
 }
 
+char	*funcion2(char *accu)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	if (!accu[i])
+		return (NULL);
+	//while (save[i] && save[i] != '\n')
+		//i++;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(accu) + 2));
+	while (accu[i] && accu[i] != '\n')
+	{
+		str[i] = accu[i];
+		i++;
+	}
+	if (accu[i] == '\n')
+	{
+		str[i] = accu[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
 char	*get_next_line(int fd)
 {
 	char		*line;
@@ -47,6 +72,6 @@ char	*get_next_line(int fd)
 	if (!accu)
 		return (NULL);
 	line = funcion2(accu);
-	accu = funcion3(accu);
+	//accu = funcion3(accu);
 	return (line);
 }
