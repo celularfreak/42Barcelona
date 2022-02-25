@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/25 13:00:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/25 13:24:55 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_get_line(char *accu)
 {
@@ -47,8 +47,6 @@ char	*ft_accu(char *accu)
 	char	*str2;
 
 	i = 0;
-	if (!accu)
-		return (NULL);
 	while (accu[i] && accu[i] != '\n')
 		i++;
 	if (!accu[i])
@@ -95,14 +93,14 @@ char	*ft_read_accu(int fd, char *accu)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*accu;
+	static char	*accu[OPEN_MAX];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (0);
-	accu = ft_read_accu(fd, accu);
-	if (!accu)
+	accu[fd] = ft_read_accu(fd, accu[fd]);
+	if (!accu[fd])
 		return (NULL);
-	line = ft_get_line(accu);
-	accu = ft_accu(accu);
+	line = ft_get_line(accu[fd]);
+	accu[fd] = ft_accu(accu[fd]);
 	return (line);
 }
