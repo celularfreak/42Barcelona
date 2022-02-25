@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/25 13:30:29 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:11:56 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ char	*ft_read_accu(int fd, char *accu)
 		i = read(fd, buf, BUFFER_SIZE);
 		if (i == -1)
 		{
+			free(accu);
 			free(buf);
 			return (NULL);
 		}
@@ -95,7 +96,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*accu[OPEN_MAX];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (0);
 	accu[fd] = ft_read_accu(fd, accu[fd]);
 	if (!accu[fd])
