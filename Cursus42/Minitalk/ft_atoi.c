@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/01 14:23:14 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/15 12:45:40 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/02 14:58:52 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <signal.h>
+#include "libft.h"
 
 int	spc_atoi(const char *str)
 {
@@ -54,47 +48,4 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i++] - 48);
 	}
 	return (num * mult);
-}
-
-int dec_to_bin(int s)
-{
-	int n, c, k;
-	for (c = 31; c >= 0; c--)
-  {
-    k = n >> c;
-
-    if (k & 1)
-	{
-      printf("1");
-		kill(pid, SIGUSR1);
-	}
-    else
-  	{
-      printf("0");
-	  kill(pid, SIGUSR2);
- 	 }
-  }
-
-  printf("\n");
-
-  return 0;
-}
-
-
-int main(int argc, char *argv[])
-{
-	pid_t pid;
-	int convert_pid;
-
-
-	if (argc > 3)
-	{
-	return 1;
-	}
-	convert_pid = ft_atoi(argv[1]);
-	pid = convert_pid;
-	//printf("%d", kill(pid,SIGKILL));
-	dec_to_bin(ft_atoi(argv[2]));
-	wait(NULL);
-	return (0);
 }
