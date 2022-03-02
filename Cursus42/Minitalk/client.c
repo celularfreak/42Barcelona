@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/02 10:48:33 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:51:15 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ int	ft_atoi(const char *str)
 	return (num * mult);
 }
 
-int dec_to_sig(int s, int pid)
+int dec_to_sig(int s, pid_t pid)
 {
+	printf("%d", pid);
 	int c, k;
 	for (c = 31; c >= 0; c--)
   {
@@ -73,7 +74,6 @@ int dec_to_sig(int s, int pid)
       printf("0");
 	  kill(pid, SIGUSR2);
  	 }
-	usleep(500);
   }
 
   printf("\n");
@@ -84,9 +84,8 @@ int dec_to_sig(int s, int pid)
 
 int main(int argc, char *argv[])
 {
-	int pid;
+	pid_t pid;
 	int convert_pid;
-
 
 	if (argc > 3)
 	{
@@ -95,7 +94,7 @@ int main(int argc, char *argv[])
 	convert_pid = ft_atoi(argv[1]);
 	pid = convert_pid;
 	//printf("%d", kill(pid,SIGKILL));
-	dec_to_sig(ft_atoi(argv[2]), pid);
-	wait(NULL);
+	//dec_to_sig('p', pid);
+	kill(pid, SIGUSR1);
 	return (0);
 }
