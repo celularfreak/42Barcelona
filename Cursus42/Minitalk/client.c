@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/01 14:23:14 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/02 10:48:33 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,24 @@ int	ft_atoi(const char *str)
 	return (num * mult);
 }
 
-int dec_to_bin(int s)
+int dec_to_sig(int s, int pid)
 {
-	int n, c, k;
+	int c, k;
 	for (c = 31; c >= 0; c--)
   {
-    k = n >> c;
+    k = s >> c;
 
     if (k & 1)
 	{
       printf("1");
-		kill(pid, SIGUSR1);
+	  kill(pid, SIGUSR1);
 	}
     else
   	{
       printf("0");
 	  kill(pid, SIGUSR2);
  	 }
+	usleep(500);
   }
 
   printf("\n");
@@ -83,7 +84,7 @@ int dec_to_bin(int s)
 
 int main(int argc, char *argv[])
 {
-	pid_t pid;
+	int pid;
 	int convert_pid;
 
 
@@ -94,7 +95,7 @@ int main(int argc, char *argv[])
 	convert_pid = ft_atoi(argv[1]);
 	pid = convert_pid;
 	//printf("%d", kill(pid,SIGKILL));
-	dec_to_bin(ft_atoi(argv[2]));
+	dec_to_sig(ft_atoi(argv[2]), pid);
 	wait(NULL);
 	return (0);
 }
