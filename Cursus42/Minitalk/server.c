@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/02 11:09:16 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:57:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,14 @@ int main(void)
 
 	pid = getpid();
 	printf("Awaiting connection at pid %d\n", pid);
+	signal(SIGUSR1, escucha);
 	while(1)
 	{
-	signal(SIGUSR1, escucha);
-	signal(SIGUSR2, escucha);
+		printf("esperando");
+	//signal(SIGUSR2, escucha);
+	pause();
 	}
-	return 0; 
+	
+	return 0;
 }
 
