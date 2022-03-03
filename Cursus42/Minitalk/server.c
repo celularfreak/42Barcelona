@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/02 16:57:43 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:22:18 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void escucha(int sig)
 {
 	if (sig == SIGUSR1)
-		printf("1");
+		write(1, "1", 1);
 	else if (sig == SIGUSR2)
 		printf("0");
 }
@@ -32,12 +32,17 @@ int main(void)
 
 	pid = getpid();
 	printf("Awaiting connection at pid %d\n", pid);
-	signal(SIGUSR1, escucha);
+	struct sigaction sa;
+        sa.sa_flags = SA_RESTART;
+        sa.sa_handler = &escucha;
+        sigaction(SIGUSR1, &sa, NULL);
+		sigaction(SIGUSR2, &sa, NULL);
+		pause();
 	while(1)
 	{
 		printf("esperando");
 	//signal(SIGUSR2, escucha);
-	pause();
+sleep(1);
 	}
 	
 	return 0;
