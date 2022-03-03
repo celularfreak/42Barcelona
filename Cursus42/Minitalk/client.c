@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/02 16:51:15 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:19:32 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,45 +56,19 @@ int	ft_atoi(const char *str)
 	return (num * mult);
 }
 
-int dec_to_sig(int s, pid_t pid)
+/*void envio (int s)
 {
-	printf("%d", pid);
-	int c, k;
-	for (c = 31; c >= 0; c--)
-  {
-    k = s >> c;
+ if(s == SIGUSR1)
+	sigaction
 
-    if (k & 1)
-	{
-      printf("1");
-	  kill(pid, SIGUSR1);
-	}
-    else
-  	{
-      printf("0");
-	  kill(pid, SIGUSR2);
- 	 }
-  }
-
-  printf("\n");
-
-  return 0;
-}
-
+}*/
 
 int main(int argc, char *argv[])
 {
-	pid_t pid;
-	int convert_pid;
-
-	if (argc > 3)
-	{
-	return 1;
-	}
-	convert_pid = ft_atoi(argv[1]);
-	pid = convert_pid;
-	//printf("%d", kill(pid,SIGKILL));
-	//dec_to_sig('p', pid);
-	kill(pid, SIGUSR1);
-	return (0);
+        //struct sigaction sa;
+        //sa.sa_flags = SA_RESTART;
+        //sa.sa_handler = &envio;
+        //sigaction(SIGUSR1, &sa, NULL);
+        kill(ft_atoi(argv[1]), SIGUSR1);
+		
 }
