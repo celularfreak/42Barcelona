@@ -6,11 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:45:40 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/02 14:58:52 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:02:58 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Minitalk.h"
+#include "minitalk.h"
 
 int	spc_atoi(const char *str)
 {
