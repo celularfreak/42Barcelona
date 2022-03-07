@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:05:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/07 15:10:51 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:53:04 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # include <signal.h>
 
 int	ft_atoi(const char *str);
+
 
 #endif

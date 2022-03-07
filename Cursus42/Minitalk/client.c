@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/07 15:08:56 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:15:28 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,33 @@ int	ft_atoi(const char *str)
 void envio (int pid,char *str)
 {
 	int i;
+	int j;
+	int x;
 
-	i = 0;
-	while (str[i])
-	{
-		
-	}
-
-	/*if (s == 1)
-		kill(pid, SIGUSR1);
-	else if (s == 0)
-		kill(pid, SIGUSR2);*/
-
+		i = 0;
+		while(str[i])
+		{
+			x = 0;
+			j = str[i];
+			while (x < 8)
+			{
+				if (j % 2 == 0)
+					{
+					kill(pid, SIGUSR2);
+					write(1, "0", 1);
+					}
+				else if(j % 2 != 0)
+					{
+					kill(pid, SIGUSR1);
+					write(1, "1", 1);
+					}
+				j /= 2;
+				usleep(500);
+				x++;
+			}
+		i++;
+		}
+	
 }
 
 int main(int argc, char *argv[])
