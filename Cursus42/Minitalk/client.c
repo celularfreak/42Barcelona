@@ -6,17 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/03 15:19:32 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:08:56 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <signal.h>
+#include "Minitalk.h"
 
 int	spc_atoi(const char *str)
 {
@@ -56,19 +50,29 @@ int	ft_atoi(const char *str)
 	return (num * mult);
 }
 
-/*void envio (int s)
+void envio (int pid,char *str)
 {
- if(s == SIGUSR1)
-	sigaction
+	int i;
 
-}*/
+	i = 0;
+	while (str[i])
+	{
+		
+	}
+
+	/*if (s == 1)
+		kill(pid, SIGUSR1);
+	else if (s == 0)
+		kill(pid, SIGUSR2);*/
+
+}
 
 int main(int argc, char *argv[])
 {
-        //struct sigaction sa;
-        //sa.sa_flags = SA_RESTART;
-        //sa.sa_handler = &envio;
-        //sigaction(SIGUSR1, &sa, NULL);
-        kill(ft_atoi(argv[1]), SIGUSR1);
-		
+	int pid;
+	int signal;
+
+	pid = ft_atoi(argv[1]);
+	envio(pid, argv[2]);
+	return 0;
 }
