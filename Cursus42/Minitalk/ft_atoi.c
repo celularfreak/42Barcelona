@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "Minitalk.h"
 
 int	spc_atoi(const char *str)
 {
