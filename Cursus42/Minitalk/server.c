@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/07 17:02:57 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:55:09 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	escucha(int sig)
 
 int	main(void)
 {
-	pid_t pid;
+	pid_t	pid;
+	struct	sigaction sa;
 
 	pid = getpid();
 	printf("Awaiting connection at pid %d\n", pid);
-	struct sigaction sa;
 	sa.sa_flags = SA_RESTART;
 	sa.sa_handler = &escucha;
-    sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
 	{
