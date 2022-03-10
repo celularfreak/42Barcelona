@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/10 16:11:55 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:22:40 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,19 +82,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 void	escucha(int sig)
 {
-static char *buffer[8];
+static char buffer[8];
 static int i = 0;
 	
-	
-
 	if (sig == SIGUSR1)
 	{
-	buffer[i]= "1";
+	buffer[i]= '1';
 	printf("1");
 	}
 	else if (sig == SIGUSR2)
 	{
-		buffer[i]= "0";
+		buffer[i]= '0';
 		printf("0");
 	}
 	i++;
@@ -102,7 +100,7 @@ static int i = 0;
 	if (i == 8)
 	{
 		i = 0;
-		printf("%s", *buffer);
+		printf("%s", buffer);
 	}
 
 }
