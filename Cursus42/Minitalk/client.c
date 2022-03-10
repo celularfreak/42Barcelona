@@ -6,14 +6,14 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/07 17:02:53 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/10 11:37:23 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	envio(int pid,char *str)
-{
+/*void	envio(int pid,char *str)
+
 	int	i;
 	int	j;
 	int	x;
@@ -34,15 +34,44 @@ void	envio(int pid,char *str)
 			{
 				kill(pid, SIGUSR1);
 				write(1, "1", 1);
-			}
+			}{
 			j /= 2;
 			usleep(500);
 			x++;
 		}
 	i++;
 	}
-}
+}*/
 
+void    envio(int pid, char *str)
+{
+    int temp;
+    int i;
+	int j;
+
+    j = 0;
+	while (str[j])
+	{
+		i = 7;
+    	while(i >= 0)
+    	{
+        	temp = str[j] & 128;
+        	if (temp)
+			{
+         	printf("1");
+            	kill(pid, SIGUSR1);
+			}
+        	else
+			{
+         	 printf("0");
+            	kill(pid, SIGUSR2);}
+        	i--;
+        	str[j] = str[j] << 1;
+			usleep(500);
+    	}
+		j++;
+	}
+}
 int	main(int argc, char *argv[])
 {
 	int	pid;
