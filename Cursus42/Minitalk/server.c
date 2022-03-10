@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/10 13:38:19 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:11:55 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		return (res_d + res_s);
 }
 
-void	bit_a_acii(char *str)
+/*void	bit_a_acii(char *str)
 {
-int temp;
+	int temp;
     int i;
 	int j;
 
@@ -62,42 +62,54 @@ int temp;
 		i = 7;
     	while(i >= 0)
     	{
-        	temp = str[j] & 128;
+        	temp = str[j] | 128;
         	if (temp)
 			{
-         	printf("1");
-            	kill(pid, SIGUSR1);
+         	//printf("1");
+            	//kill(pid, SIGUSR1);
 			}
         	else
 			{
-         	 printf("0");
-            	kill(pid, SIGUSR2);}
+         	 //printf("0");
+            	//kill(pid, SIGUSR2);}
         	i--;
         	str[j] = str[j] << 1;
 			usleep(500);
     	}
 		j++;
 	}
-}
+}*/
+
 void	escucha(int sig)
 {
-static char *buffer;
-while (ft_strlen(buffer) > 8)
-	{
+static char *buffer[8];
+static int i = 0;
+	
+	
+
 	if (sig == SIGUSR1)
 	{
-		ft_strlcat(buffer, '1', 1);
-		write(1, "1", 1);
+	buffer[i]= "1";
+	printf("1");
 	}
 	else if (sig == SIGUSR2)
-		ft_strlcat(buffer, '0', 1);
-		write(1, "0", 1);
+	{
+		buffer[i]= "0";
+		printf("0");
+	}
+	i++;
+
+	if (i == 8)
+	{
+		i = 0;
+		printf("%s", *buffer);
 	}
 
 }
 
 
-void transforma(int sig)
+
+/*void transforma(char *str)
 {
     int temp;
     int i;
@@ -113,21 +125,22 @@ void transforma(int sig)
         	if (temp)
 			{
          	printf("1");
-            	kill(pid, SIGUSR1);
+            	escucha(SIGUSR1);
 			}
         	else
 			{
          	 printf("0");
-            	kill(pid, SIGUSR2);}
+            	escucha(SIGUSR2);}
         	i--;
         	str[j] = str[j] << 1;
 			usleep(500);
     	}
 		j++;	
 	}
-}
+}*/
 int	main(void)
 {
+	
 	pid_t	pid;
 	struct	sigaction sa;
 
