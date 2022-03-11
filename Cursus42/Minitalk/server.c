@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/11 15:53:36 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:14:46 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,12 @@ void	escucha(int sig)
 	}
 }
 
-/*void	get_pid(int signum, siginfo_t *info, void *context)
-{
-	if (context)
-		sighandler(signum, info->si_pid);
-}
-*/
 int	main(void)
 {
 	struct sigaction	sa;
 
 	printf("Awaiting connection at pid %i\n", getpid());
 	sa.sa_flags = SA_SIGINFO;
-	//sa.sa_sigaction = get_pid;
 	sa.sa_handler = &escucha;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
