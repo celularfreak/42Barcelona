@@ -6,72 +6,43 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/11 08:30:03 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:24:32 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <signal.h>
 
-/*void	envio(int pid,char *str)
+int	ft_atoi(const char *str);
 
+void	envio(int pid, char *str)
+{
+	int	temp;
 	int	i;
 	int	j;
-	int	x;
 
-	i = 0;
-	while (str[i])
-	{
-		x = 0;
-		j = str[i];
-		while (x < 8)
-		{
-			if (j % 2 == 0)
-			{
-				kill(pid, SIGUSR2);
-				write(1, "0", 1);
-			}
-			else if (j % 2 != 0)
-			{
-				kill(pid, SIGUSR1);
-				write(1, "1", 1);
-			}{
-			j /= 2;
-			usleep(500);
-			x++;
-		}
-	i++;
-	}
-}*/
-
-void    envio(int pid, char *str)
-{
-    int temp;
-    int i;
-	int j;
-
-    j = 0;
+	j = 0;
 	while (str[j])
 	{
 		i = 7;
-    	while(i >= 0)
-    	{
-        	temp = str[j] & 128;
-        	if (temp)
-			{
-         	printf("1");
-            	kill(pid, SIGUSR1);
-			}
-        	else
-			{
-         	 printf("0");
-            	kill(pid, SIGUSR2);}
-        	i--;
-        	str[j] = str[j] << 1;
+		while (i >= 0)
+		{
+			temp = str[j] & 128;
+			if (temp)
+				kill(pid, SIGUSR1);
+			else
+				kill(pid, SIGUSR2);
+			i--;
+			str[j] = str[j] << 1;
 			usleep(500);
-    	}
+		}
 		j++;
 	}
 }
+
 int	main(int argc, char *argv[])
 {
 	int	pid;

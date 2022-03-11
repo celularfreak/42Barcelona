@@ -29,7 +29,7 @@ OBJS_B = $(FILES_B:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-
+.c.o: ${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
