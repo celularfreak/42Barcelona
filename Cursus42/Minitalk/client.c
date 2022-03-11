@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 08:55:30 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/11 15:53:37 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:24:48 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ int	main(int argc, char *argv[])
 {
 	int		pid;
 
+	if (argc < 3)
+		return (0);
 	pid = ft_atoi(argv[1]);
 	envio(pid, argv[2]);
-	envio(pid, NULL);
 	return (0);
 }
