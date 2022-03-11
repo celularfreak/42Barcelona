@@ -14,8 +14,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <signal.h>
 
 int	spc_atoi(const char *str)
