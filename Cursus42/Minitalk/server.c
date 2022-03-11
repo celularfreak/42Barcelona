@@ -6,49 +6,12 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:00:39 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/03/10 17:22:40 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/03/11 08:30:45 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	res_d;
-	unsigned int	res_s;
-
-	i = ft_strlen(dest);
-	j = 0;
-	res_d = ft_strlen(dest);
-	res_s = ft_strlen(src);
-	if (size < 1)
-		return (res_s + size);
-	while (src[j] && i < size - 1)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	if (size < res_d)
-		return (res_s + size);
-	else
-		return (res_d + res_s);
-}
 
 /*void	bit_a_acii(char *str)
 {
@@ -84,7 +47,7 @@ void	escucha(int sig)
 {
 static char buffer[8];
 static int i = 0;
-	
+	printf("funcionando");
 	if (sig == SIGUSR1)
 	{
 	buffer[i]= '1';
