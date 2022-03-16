@@ -6,43 +6,24 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 08:52:05 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/03/11 16:26:09 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/03/16 17:40:23 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS 	= -Wall -Wextra -Werror
-
-SRCS_C 	= client.c minitalk_utils.c
-
-SRCS_S 	= server.c
-
-OBJS_C 	= ${SRCS_C:.c=.o}
-
-OBJS_S 	= ${SRCS_S:.c=.o}
-
-NAME	= minitalk
-
-NAME_C 	= client
-
-NAME_S 	= server
-
-RM 		= rm -f
-
-.c.o:	
-	gcc -c ${CFLAGS} $< -o ${<:.c=.o}
-
-all:		${NAME}
-
-${NAME}:	${OBJS_C} ${OBJS_S}
-			ar rc ${NAME_C} ${OBJS_C}
-			ar rc ${NAME_S} ${OBJS_S}
+all:
+	@gcc -Wall -Wextra -Werror server.c -o server
+	@gcc -Wall -Wextra -Werror client.c -o client
 
 clean:
-			${RM} ${OBJS_C}
-			${RM} ${OBJS_S}
-			
-fclean:		clean
-			${RM} ${NAME}
-re:			fclean all
+	@rm -f server
+	@rm -f client
 
-.PHONY:		all clean fclean re
+fclean: clean
+
+re: fclean all
+
+bonus: fclean
+	@gcc -Wall -Wextra -Werror server_bonus.c -o server
+	@gcc -Wall -Wextra -Werror client_bonus.c -o client
+	
+.PHONY:		all bonus clean fclean re
