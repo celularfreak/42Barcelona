@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:58:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/01/30 10:49:47 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:05:48 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) > len)
+	if (ft_strlen(s) > len - start)
 		dest = malloc(sizeof(char) * (len + 1));
 	else
 		dest = malloc(sizeof(char) * (ft_strlen(s) + 1));
