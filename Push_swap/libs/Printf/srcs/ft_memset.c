@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 12:24:08 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/04/25 15:02:11 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/01/24 12:34:19 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 11:48:26 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#indef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"../ft_printf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t	cont;
 
-int	push_swap(int argc, char **argv);
-
-#endif
+	cont = 0;
+	while (cont < n)
+	{
+		((unsigned char *)s)[cont] = (unsigned char)c;
+		cont++;
+	}
+	return (s);
+}
