@@ -10,6 +10,7 @@ typedef struct s_data{
 	int		endian;
 } t_data;
 
+/*
 void my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -44,5 +45,43 @@ int	main(void)
 	//my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);	
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
+	}
+	*/
 
+int	main(void)
+{
+	void	*mlx;
+	void	*img;
+	void	*img2;
+	void	*img3;
+	void	*img4;
+	void	*img5;
+	void	*mlx_win;
+	char	*relative_path = "./img/sonic.xpm";
+	char	*relative_path2 = "./img/sonic2.xpm";
+	char	*relative_path3 = "./img/sonic3.xpm";
+	char	*relative_path4 = "./img/sonic4.xpm";
+	char	*relative_path5 = "./img/sonic5.xpm";
+	int		img_width;
+	int		img_height;
+
+	img_width = 42;
+	img_height = 42;
+	
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
+	img2 = mlx_xpm_file_to_image(mlx, relative_path2, &img_width, &img_height);
+	img3 = mlx_xpm_file_to_image(mlx, relative_path3, &img_width, &img_height);
+	img4 = mlx_xpm_file_to_image(mlx, relative_path4, &img_width, &img_height);
+	img5 = mlx_xpm_file_to_image(mlx, relative_path5, &img_width, &img_height);
+	//mlx_put_image_to_window ( void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y );
+	mlx_put_image_to_window(mlx, mlx_win, img, 800, 600);
+	mlx_put_image_to_window(mlx, mlx_win, img2, 800, 650);
+	mlx_put_image_to_window(mlx, mlx_win, img3, 800, 700);
+	mlx_put_image_to_window(mlx, mlx_win, img4, 800, 750);
+	mlx_put_image_to_window(mlx, mlx_win, img5, 800, 800);
+	
+
+	mlx_loop(mlx);
 }
