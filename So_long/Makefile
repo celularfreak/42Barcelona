@@ -1,6 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
+#    Updated: 2022/05/13 10:55:00 by dnunez-m         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
 CFLAGS 	= -Wall -Wextra -Werror
 
-SRCS 	= so_long.c
+SRCS 	= so_long.c get_next_line.c get_next_line_utils.c
 		
 SRCS_B 	= 
 
@@ -8,7 +21,7 @@ OBJS 	= ${SRCS:.c=.o}
 
 OBJS_B 	= ${SRCS_B:.c=.o}
 
-NAME 	= so_long.a
+NAME 	= so_long
 
 RM 		= rm -f
 
