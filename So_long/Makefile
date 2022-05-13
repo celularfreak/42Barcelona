@@ -6,20 +6,16 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/05/13 10:55:00 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/05/13 17:07:07 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CFLAGS 	= -Wall -Wextra -Werror
 
-SRCS 	= so_long.c get_next_line.c get_next_line_utils.c
-		
-SRCS_B 	= 
+SRCS 	= so_long.c 
 
 OBJS 	= ${SRCS:.c=.o}
-
-OBJS_B 	= ${SRCS_B:.c=.o}
 
 NAME 	= so_long
 
@@ -32,13 +28,8 @@ RM 		= rm -f
 
 all:		${NAME}
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
-			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit libft/libft.a mlx/libmlx.a ${NAME} -o so_long
-
-bonus:		${OBJS_B}
-			ar rc ${NAME} ${OBJS_B}
-			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit libft/libft.a mlx/libmlx.a ${NAME} -o so_long
+${NAME}:	${OBJS} so_long.h
+			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit libft/libft.a mlx/libmlx.a ${OBJS} -o ${NAME}
 
 clean:
 			${RM} ${OBJS} ${OBJS_B}
