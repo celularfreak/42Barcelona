@@ -83,4 +83,3 @@ int	main(void)
 	mlx_put_image_to_window(mlx, mlx_win, img5, 800, 800);
 	mlx_loop(mlx);
 }
-
