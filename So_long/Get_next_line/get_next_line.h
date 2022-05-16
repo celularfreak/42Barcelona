@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:50 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/16 11:48:42 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:20:45 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <limits.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 
+# ifndef BUFFER_SIZE 
+#  define BUFFER_SIZE 1
 # endif
 
 char	*get_next_line(int fd);
