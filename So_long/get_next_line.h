@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/16 11:52:40 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/02/22 10:20:50 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/05/16 11:52:29 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include "./mlx/mlx.h"
-#include "./libft/libft.h"
-#include "./get_next_line/get_next_line.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 
+# endif
 
-
+char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_read_accu(int fd, char *accu);
+char	*ft_accu(char *accu);
+char	*ft_get_line(char *accu);
 #endif
