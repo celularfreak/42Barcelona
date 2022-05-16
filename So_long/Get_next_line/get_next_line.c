@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/25 13:00:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:42:30 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_accu(char *accu)
 		free(accu);
 		return (NULL);
 	}
-	str2 = (char *)malloc(sizeof(char) * (ft_strlen(accu) - i + 1));
+	str2 = (char *)malloc(sizeof(char) * (ft_strlen2(accu) - i + 1));
 	if (!str2)
 		return (NULL);
 	i++;
@@ -86,7 +86,7 @@ char	*ft_read_accu(int fd, char *accu)
 			return (NULL);
 		}
 		buf[i] = '\0';
-		accu = ft_strjoin(accu, buf);
+		accu = ft_strjoin2(accu, buf);
 	}
 	free(buf);
 	return (accu);

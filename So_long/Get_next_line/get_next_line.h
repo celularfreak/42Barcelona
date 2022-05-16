@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:50 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/25 12:46:31 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:48:42 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strchr(char *s, int c);
-size_t	ft_strlen(char *s);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr2(char *s, int c);
+size_t	ft_strlen2(char *s);
+char	*ft_strjoin2(char *s1, char *s2);
 char	*ft_read_accu(int fd, char *accu);
 char	*ft_accu(char *accu);
 char	*ft_get_line(char *accu);
