@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:20:42 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/16 11:42:30 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:20:32 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*ft_read_accu(int fd, char *accu)
 	if (!buf)
 		return (NULL);
 	i = 1;
-	while (!ft_strchr(accu, '\n') && i != 0)
+	while (!ft_strchr2(accu, '\n') && i != 0)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
 		if (i == -1)
