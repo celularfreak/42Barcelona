@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/16 13:13:31 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:59:42 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
+
+typedef enum t_imagenes{
+	HIERBA,
+	PIEDRA,
+	SONIC,
+	FONDO
+} imagenes;
 
 
 
