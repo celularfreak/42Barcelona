@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/16 16:59:42 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:06:57 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,24 @@
 #include <math.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/types.h>
+#include <sys/uio.h>
 
-typedef enum t_imagenes{
-	HIERBA,
-	PIEDRA,
-	SONIC,
-	FONDO
-} imagenes;
+/* typedef struct	s_sprite
+{
+	int				x;
+	int				y;
+	char			dir;
+}					t_sprite;
+
+*/
+
+typedef struct 	s_vars
+{
+	void			*img;
+	void			*mlx;
+	void			*win;
+	void			**map;
+}					t_vars;
 
 
 
