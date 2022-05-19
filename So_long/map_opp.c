@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_opp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/19 10:36:23 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/05/19 10:38:26 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "so_long.h"
 
-int	main(int argc, char **argv)
-{	
-	int fd;
-	int i;
-	char **map;
-	char *line;
+int	array_str_count(char **arr)
+{
+	int	i;
 
-
-		if (argc == 1)
-		return (0);
 	i = 0;
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-		printf("Error: Not a map in the file\n");
-	map = ft_calloc(sizeof(char *), 1);
-	if (!map)
-		printf("Error: Malloc failed\n");
-	while (1){
-		line = get_next_line(fd);
-		if (line != NULL)
-			map = line_add(map, line);
-		else
-			break;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
+}
+
+char	**line_add(char **arr, char *str)
+{
+	int		i;
+	int		n;
+	char	**new;
+
+	i = 0;
+	n = array_str_count(arr);
+	new = ft_calloc(sizeof(char *), n + 2);
+	while (i < n)
+	{
+		new[i] = arr[i];
 		i++;
 	}
-	close(fd);
+	new[i] = str;
+	free(arr);
+	return (new);
 }
