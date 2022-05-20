@@ -6,13 +6,13 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/19 10:38:26 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:26:56 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	array_str_count(char **arr)
+int	arr_lenght(char **arr)
 {
 	int	i;
 
@@ -26,17 +26,42 @@ char	**line_add(char **arr, char *str)
 {
 	int		i;
 	int		n;
-	char	**new;
+	char	**temp;
 
 	i = 0;
-	n = array_str_count(arr);
-	new = ft_calloc(sizeof(char *), n + 2);
+	n = arr_lenght(arr);
+	temp = ft_calloc(sizeof(char *), n + 2);
 	while (i < n)
 	{
-		new[i] = arr[i];
+		temp[i] = arr[i];
 		i++;
 	}
-	new[i] = str;
+	temp[i] = str;
 	free(arr);
-	return (new);
+	return (temp);
 }
+
+
+char **map_opp(char *map)
+{
+int fd;
+	int i;
+	char **map;
+	char *line;
+i = 0;
+	fd = open(map, O_RDONLY);
+	if (fd == -1)
+		printf("Error: Not a map in the file\n");
+	map = ft_calloc(sizeof(char *), 1);
+	if (!map)
+		printf("Error: Malloc failed\n");
+	while (1){
+		line = get_next_line(fd);
+		if (line != NULL)
+			map = line_add(map, line);
+		else
+			break;
+		i++;
+	}
+	close(fd);
+	}
