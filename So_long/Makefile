@@ -6,14 +6,14 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/05/19 09:49:21 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/05/23 14:12:44 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CFLAGS 	= -Wall -Wextra -Werror
 
-SRCS 	= so_long.c map_opp.c \
+SRCS 	= so_long.c map_conv.c \
 ./get_next_line/get_next_line.c \
 ./get_next_line/get_next_line_utils.c \
 
