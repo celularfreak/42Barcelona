@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_opp.c                                          :+:      :+:    :+:   */
+/*   map_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/20 15:26:56 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:12:30 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,29 @@ char	**line_add(char **arr, char *str)
 	return (temp);
 }
 
-
-char **map_opp(char *map)
+char	**map_opp(char *orig_map)
 {
-int fd;
-	int i;
-	char **map;
-	char *line;
-i = 0;
-	fd = open(map, O_RDONLY);
+	int		fd;
+	int		i;
+	char	**map;
+	char	*line;
+
+	i = 0;
+	fd = open(orig_map, O_RDONLY);
 	if (fd == -1)
 		printf("Error: Not a map in the file\n");
 	map = ft_calloc(sizeof(char *), 1);
 	if (!map)
 		printf("Error: Malloc failed\n");
-	while (1){
+	while (1)
+	{
 		line = get_next_line(fd);
 		if (line != NULL)
 			map = line_add(map, line);
 		else
-			break;
+			break ;
 		i++;
 	}
 	close(fd);
-	}
+	return (map);
+}
