@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/23 14:08:24 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:44:31 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@
 
 typedef struct 	s_vars
 {
-	void			*img;
+	void			**img;
 	void			*mlx;
 	void			*win;
-	void			**map;
+	char			**map;
 }					t_vars;
 
 int		arr_lenght(char **arr);
