@@ -6,14 +6,14 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/30 16:33:39 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:07:16 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#define SIZE_SPRITE 50
+#define SIZE 50
 #include "./mlx/mlx.h"
 #include "./libft/libft.h"
 #include "./get_next_line/get_next_line.h"
@@ -43,10 +43,12 @@ typedef struct 	s_vars
 	void			*mlx;
 	void			*win;
 	char			**map;
+	int				size_w;
+	int				size_h;
 }					t_vars;
 
 int		arr_lenght(char **arr);
 char	**line_add(char **arr, char *str);
 char	**map_opp(char *orig_map);
-t_vars	*ini_img(t_vars *v);
+t_vars	*ini_img(t_vars *master);
 #endif
