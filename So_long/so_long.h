@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/30 17:07:16 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:03:06 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ typedef struct 	s_vars
 int		arr_lenght(char **arr);
 char	**line_add(char **arr, char *str);
 char	**map_opp(char *orig_map);
-t_vars	*ini_img(t_vars *master);
+t_vars *ini_img(t_vars *master);
+void ins_img(t_vars *master, int x , int y);
 #endif
