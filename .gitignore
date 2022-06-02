@@ -1,8 +1,7 @@
-.vscode/c_cpp_properties.json
 *.o
 *.a
 libft-unit-test
 *.swp
 .DS_Store
 .gitignore
-.vscode
+.vscode/
