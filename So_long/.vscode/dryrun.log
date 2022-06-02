@@ -3,13 +3,13 @@ make: Entering directory `/Users/dnunez-m/Documents/42Barcelona/So_long'
 make -C libft
 make -C mlx
 gcc -c -Wall -Wextra -Werror -Imlx so_long.c -o so_long.o
- 
 make -C libft
 make -C mlx
 gcc -c -Wall -Wextra -Werror -Imlx map_conv.c -o map_conv.o
 make -C libft
 make -C mlx
 gcc -c -Wall -Wextra -Werror -Imlx images.c -o images.o
+ 
 make -C libft
 make -C mlx
 gcc -c -Wall -Wextra -Werror -Imlx get_next_line/get_next_line.c -o get_next_line/get_next_line.o

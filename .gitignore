@@ -4,10 +4,5 @@
 libft-unit-test
 *.swp
 .DS_Store
-
-Cursus42/.vscode/settings.json
-.vscode/configurationCache.log
 .gitignore
-.vscode/dryrun.log
-.vscode/settings.json
-.vscode/targets.log
+.vscode

@@ -8,12 +8,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jun  1 23:27:05 2022
+# Make data base, printed on Thu Jun  2 09:47:53 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -26,7 +27,6 @@ VSCODE_LOG_NATIVE = false
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/dnunez-m/Documents/42Barcelona/So_long
- 
 # makefile
 SHELL = /bin/sh
 # makefile (from `Makefile', line 24)
@@ -44,13 +44,13 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 20)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_qm0032nx/T/vscode-ipc-b0fbf8b0-9c8c-47dd-88dc-3e8ee907bc4b.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_qm0032nx/T/vscode-ipc-383f0251-1781-42ee-b118-3f282bdb9ae1.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
-LaunchInstanceID = 5DC150FB-CB66-4805-AB3D-FBBFA190ECD9
+LaunchInstanceID = 6CF97360-3847-424D-945A-D369ED4542CB
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -58,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.jJFVrwbN4z/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.6nst5KAabk/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -122,7 +122,7 @@ MFLAGS = -Rrqp
 # environment
 MAIL = dnunez-m@student.42barcelona.com
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -150,7 +150,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3735
+VSCODE_PID = 42458
 # variable set hash-table stats:
 # Load=69/1024=7%, Rehash=0, Collisions=3/97=3%
 
@@ -208,9 +208,9 @@ get_next_line/get_next_line_utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
+ 
 Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-30 11:28:37
@@ -323,6 +323,6 @@ so_long.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  1 23:27:05 2022
+# Finished Make data base on Thu Jun  2 09:47:53 2022
 
  
