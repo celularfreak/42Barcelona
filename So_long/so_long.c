@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/01 21:32:16 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/02 10:53:00 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int	main(int argc, char **argv)
 	if(!master.ground)
 		write(1, "Error loading ground image\n", 26);
 	master.size_w = (ft_strlen(master.map[0]) - 1);
-	master.size_h = (arr_lenght(master.map));	
+	master.size_h = arr_lenght(master.map);	
 	master.win = mlx_new_window(master.mlx, master.size_w * SIZE, master.size_h * SIZE, "So Long, and Thanks for All the Fish");
-	//mlx_put_image_to_window(&master.mlx, master.win, master.ground, 0, 0);
 	ins_img(&master, master.size_w, master.size_h);
 	mlx_loop(master.mlx);
 	return (0);
