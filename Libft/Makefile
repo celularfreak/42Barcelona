@@ -19,31 +19,43 @@ FILES_C = ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	   ft_putnbr_fd.c ft_putendl_fd.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 	   ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c
 
-OBJS = $(FILES_C:.c=.o)
-
 FILES_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+OBJS = $(FILES_C:.c=.o)
 
 OBJS_B = $(FILES_B:.c=.o)
 
 CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
+
 NAME = libft.a
+
+RM 		= rm -f
+
 .c.o: ${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
+
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME):		$(OBJS) libft.h
+				ar -rcs $(NAME) $(OBJS)
+				ranlib $(NAME)
 
-bonus: 			$(OBJS) $(OBJS_B)
-				ar rcs $(NAME) $(OBJS) $(OBJS_B)			
+bonus:			.bonus
+
+.bonus: 		$(OBJS) $(OBJS_B) libft.h 
+				ar -rcs $(NAME) $(OBJS) $(OBJS_B)
+				ranlib $(NAME)
+				@touch $@
 
 clean:
 				$(RM) $(OBJS) $(OBJS_B)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) 
+				$(RM) .bonus
 
-re:				fclean $(NAME)
+re:				fclean $(NAME) 
 
 .PHONY:			all bonus clean fclean re
