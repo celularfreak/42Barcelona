@@ -5,3 +5,4 @@ libft-unit-test
 .DS_Store
 .gitignore
 .vscode/
+.idea
