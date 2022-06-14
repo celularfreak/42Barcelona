@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:27:27 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/14 11:08:57 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:22:33 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,24 @@ void	ins_img(t_vars *master, int x, int y)
 		j = -1;
 		while (++j <= (y - 1))
 		{
-			mlx_put_image_to_window(master->mlx, master->win,
-				master->ground, i * SIZE, j * SIZE);
+			put_image(master, master->ground, i, j);
 			if (master->map[j][i] == 'P')
 			{
-				mlx_put_image_to_window(master->mlx,
-					master->win, master->sonic, i * SIZE, j * SIZE);
-				master->character.x = j;
-				master->character.y = i;
+				put_image(master, master->sonic, i, j);
+				master->character.x = i;
+				master->character.y = j;
 			}
 			if (master->map[j][i] == '1')
-				mlx_put_image_to_window(master->mlx,
-					master->win, master->rocks, i * SIZE, j * SIZE);
+				put_image(master, master->rocks, i, j);
 			if (master->map[j][i] == 'C')
-				mlx_put_image_to_window(master->mlx,
-					master->win, master->ring, i * SIZE, j * SIZE);
+				put_image(master, master->ring, i, j);
 			if (master->map[j][i] == 'E')
-				mlx_put_image_to_window(master->mlx,
-					master->win, master->door, i * SIZE, j * SIZE);
+				put_image(master, master->door, i, j);
 		}
 	}
+}
+
+void	put_image(t_vars *master, void *img, int x, int y)
+{
+	mlx_put_image_to_window(master->mlx, master->win, img, x * SIZE, y * SIZE);
 }
