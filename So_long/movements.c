@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/14 12:41:13 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:57:23 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	key_press(int keycode, t_character *character)
 		*/
 	if (keycode == 100 || keycode == 68)
 		character->x -= SIZE;
-		
 	if (keycode == 97 || keycode == 65)
 		character->x += SIZE;
 	if (keycode == 119 || keycode == 87)
@@ -29,7 +28,7 @@ int	key_press(int keycode, t_character *character)
 	return (0);
 }
 
-int	events(int keycode, t_vars *master)
+/*int	events(int keycode, t_vars *master)
 {
 	char	dir;
 
@@ -55,4 +54,4 @@ int	events(int keycode, t_vars *master)
 	}
 	print_map(vars);
 	return (0);
-}
+}*/

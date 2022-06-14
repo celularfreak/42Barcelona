@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/14 12:38:00 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:58:55 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	master.size_h = arr_lenght(master.map);	
 	master.win = mlx_new_window(master.mlx, master.size_w * SIZE, master.size_h * SIZE, "So Long, and Thanks for All the Fish");
 	ins_img(&master, master.size_w, master.size_h);
-	mlx_hook(master.win, 2, 0, events, &master);
+	//mlx_hook(master.win, 2, 0, events, &master);
 	mlx_loop(master.mlx);
 }
 	
