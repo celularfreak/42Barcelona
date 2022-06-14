@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:27:27 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/02 14:42:31 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:08:57 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,12 @@ void	ins_img(t_vars *master, int x, int y)
 			mlx_put_image_to_window(master->mlx, master->win,
 				master->ground, i * SIZE, j * SIZE);
 			if (master->map[j][i] == 'P')
+			{
 				mlx_put_image_to_window(master->mlx,
 					master->win, master->sonic, i * SIZE, j * SIZE);
+				master->character.x = j;
+				master->character.y = i;
+			}
 			if (master->map[j][i] == '1')
 				mlx_put_image_to_window(master->mlx,
 					master->win, master->rocks, i * SIZE, j * SIZE);
