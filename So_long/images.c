@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:27:27 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/14 15:22:33 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:00:08 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,28 +31,23 @@ t_vars	*ini_img(t_vars *master)
 
 void	ins_img(t_vars *master, int x, int y)
 {
-	int	i;
-	int	j;
+	int	k[2];
 
-	i = -1;
-	while (++i <= (x - 1))
+	k[0] = -1;
+	while (++k[0] <= (x - 1))
 	{
-		j = -1;
-		while (++j <= (y - 1))
+		k[1] = -1;
+		while (++k[1] <= (y - 1))
 		{
-			put_image(master, master->ground, i, j);
-			if (master->map[j][i] == 'P')
-			{
-				put_image(master, master->sonic, i, j);
-				master->character.x = i;
-				master->character.y = j;
-			}
-			if (master->map[j][i] == '1')
-				put_image(master, master->rocks, i, j);
-			if (master->map[j][i] == 'C')
-				put_image(master, master->ring, i, j);
-			if (master->map[j][i] == 'E')
-				put_image(master, master->door, i, j);
+			put_image(master, master->ground, k[0], k[1]);
+			if (master->map[k[1]][k[0]] == 'P')
+				put_image(master, master->sonic, k[0], k[1]);
+			if (master->map[k[1]][k[0]] == '1')
+				put_image(master, master->rocks, k[0], k[1]);
+			if (master->map[k[1]][k[0]] == 'C')
+				put_image(master, master->ring, k[0], k[1]);
+			if (master->map[k[1]][k[0]] == 'E')
+				put_image(master, master->door, k[0], k[1]);
 		}
 	}
 }
@@ -60,4 +55,11 @@ void	ins_img(t_vars *master, int x, int y)
 void	put_image(t_vars *master, void *img, int x, int y)
 {
 	mlx_put_image_to_window(master->mlx, master->win, img, x * SIZE, y * SIZE);
+	if (img == master->sonic)
+	{
+		master->character.x = x;
+		master->character.y = y;
+	}
+	if (img == master->ring)
+		master->item_count++;
 }
