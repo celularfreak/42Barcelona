@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/14 15:22:59 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/15 09:31:00 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ char	**line_add(char **arr, char *str);
 char	**map_opp(char *orig_map);
 t_vars	*ini_img(t_vars *master);
 void	ins_img(t_vars *master, int x, int y);
-int		key_press(int key, t_character *character);
-//int		events(int keycode, t_vars *master);
+int		key_press(int key, t_character *character, t_vars *master);
 void	put_image(t_vars *master, void *img, int x, int y);
+//int		events(int keycode, t_vars *master);
+
 #endif
