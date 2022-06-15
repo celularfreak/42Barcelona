@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/15 09:31:00 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/15 10:37:15 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_vars
 	char			**map;
 	int				size_w;
 	int				size_h;
+	int				item_count;
 	t_character		character;
 }					t_vars;
 
