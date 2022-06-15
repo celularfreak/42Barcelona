@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/15 09:42:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:24:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	key_press(int keycode, t_character *character, t_vars *master)
 
 	if (keycode == 13 || keycode == 126)
 		new_pos = master->map[character->x - 1][character->y];
-	if (keycode == 97 || keycode == 65)
+	if (keycode == 0 || keycode == 123)
 		new_pos = master->map[character->x + 1][character->y];
-	if (keycode == 119 || keycode == 87)
+	if (keycode == 1 || keycode == 125)
 		new_pos = master->map[character->x][character->y - 1];
-	if (keycode == 115 || keycode == 83)
+	if (keycode == 2 || keycode == 124)
 		new_pos = master->map[character->x][character->y + 1];
 	if (new_pos == '1')
 		return (0);
