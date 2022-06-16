@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/17 14:58:05 by aigarcia          #+#    #+#             */
+/*   Updated: 2022/06/16 12:13:44 by dnunez-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 #include "read.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	struct s_map_config map_config;
+	struct s_map_config	map_config;
 	int					**arr;
 	int					i;
 	int					j;
@@ -31,7 +43,7 @@ int main(int argc, char **argv)
 			j++;
 			i = 0;
 			if (j == map_config.cols)
-				break;
+				break ;
 		}
 	}
 }
