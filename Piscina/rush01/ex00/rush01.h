@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 21:01:32 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/07 21:22:11 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/16 12:20:15 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define RUSH01_H
 # define N 4
 
-typedef struct s_enter
+typedef struct	s_enter
 {
 	char	up[N];
 	char	down[N];

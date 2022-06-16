@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/08 19:47:24 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/16 12:18:37 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] > 96 && str[i] < 123 ))
+		if ((str[i] > 96 && str[i] < 123))
 			str[i] = str[i] - 32;
 		i++;
 	}

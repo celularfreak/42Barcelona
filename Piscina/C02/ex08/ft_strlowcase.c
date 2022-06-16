@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:48:46 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/08 19:55:43 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/16 12:18:48 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strlowcase(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] > 64 && str[i] < 91 ))
+		if ((str[i] > 64 && str[i] < 91))
 			str[i] = str[i] + 32;
 		i++;
 	}

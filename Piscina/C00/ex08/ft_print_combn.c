@@ -3,27 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelon      +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:51:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/02 17:07:35 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/16 12:18:18 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include <unistd.h>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
 
-void	ft_print_combn.c(int n)
+void	ft_print_combn(int n)
 {
 	if (n > 0 && n > 10)
-		return;
-
-
-
-
-
-
+		return (0);
+}

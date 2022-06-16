@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_solve_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnunez-m <dnunez-m@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:17:35 by dnunez-m          #+#    #+#             */
-/*   Updated: 2021/11/17 19:57:25 by aigarcia         ###   ########.fr       */
+/*   Updated: 2022/06/16 12:09:38 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "read.h"
 
 int	ft_low_number(int a, int b, int c)
@@ -22,12 +22,12 @@ int	ft_low_number(int a, int b, int c)
 		return (c);
 }
 
-struct s_result ft_find_square(struct s_map_config config, int **map)
+struct s_result	ft_find_square(struct s_map_config config, int **map)
 {
-	struct s_result result;
-	int	x;
-	int	y;
-	int count;
+	struct s_result	result;
+	int				x;
+	int				y;
+	int				count;
 
 	count = 0;
 	y = 0;
@@ -36,7 +36,8 @@ struct s_result ft_find_square(struct s_map_config config, int **map)
 	while (y < config.lines)
 	{
 		if (map[y][x] != 0 && x != 0 && y != 0)
-			map[y][x] = ft_low_number(map[y -1][x - 1], map[y][x - 1], map[y - 1][x]) + 1;
+			map[y][x] = ft_low_number(map[y -1][x - 1],
+					map[y][x - 1], map[y - 1][x]) + 1;
 		if (map[y][x] > count)
 		{
 			count = map[y][x];
@@ -48,9 +49,9 @@ struct s_result ft_find_square(struct s_map_config config, int **map)
 	return (result);
 }
 
-struct s_result ft_update_result(int count, int x, int y)
+struct s_result	ft_update_result(int count, int x, int y)
 {
-	struct s_result result;
+	struct s_result	result;
 
 	result.x = x - (count - 1);
 	result.y = y - (count - 1);

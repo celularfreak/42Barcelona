@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   readfile.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/17 14:58:05 by aigarcia          #+#    #+#             */
+/*   Updated: 2022/06/16 12:16:18 by dnunez-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "read.h"
 #include "header.h"
 
 struct s_map_config	readfile(char *map)
 {
-	int				fd;
-	char			*line;
-	int				i;
-	struct s_map_config map_config;
+	int					fd;
+	char				*line;
+	int					i;
+	struct s_map_config	map_config;
 
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
@@ -15,9 +27,9 @@ struct s_map_config	readfile(char *map)
 	map_config = read_config(line);
 	free(line);
 	i = 0;
-	map_config.contents = (char **)malloc(map_config.lines *sizeof(char *));
+	map_config.contents = (char **)malloc(map_config.lines * sizeof(char *));
 	if (map_config.contents == NULL)
-		return NULL;
+		return (NULL);
 	while (i < map_config.lines)
 	{
 		map_config.contents[i] = read_line(fd);
@@ -36,11 +48,11 @@ char	*read_line(int fd)
 
 	line = (char *)malloc(sizeof(int));
 	if (line == NULL)
-		return NULL;
+		return (NULL);
 	while (read(fd, c, 1) > 0 && c[0] != '\n')
 		ft_strncat(line, c, 1);
 	if (read(fd, c, 1) == NULL)
-		return NULL;
+		return (NULL);
 	return (line);
 }
 
@@ -52,13 +64,13 @@ int	**make_array(struct s_map_config config)
 
 	arr = (int **)malloc(config.lines * config.cols * sizeof(int *));
 	if (arr == NULL)
-		return NULL;
+		return (NULL);
 	jt = 0;
 	while (jt < config.lines)
 	{
 		arr[jt] = (int *)malloc(config.cols * sizeof(int));
 		if (arr[jt] == NULL)
-			return NULL;
+			return (NULL);
 		it = 0;
 		while (it < config.cols)
 		{
@@ -74,9 +86,9 @@ int	**make_array(struct s_map_config config)
 	return (arr);
 }
 
-struct s_map_config read_config(char *str)
+struct s_map_config	read_config(char *str)
 {
-	struct s_map_config map_config;
+	struct s_map_config	map_config;
 	int					i;
 
 	i = 0;
