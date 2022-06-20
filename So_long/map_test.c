@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/20 12:41:24 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:51:13 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	rectangle_test(char **map)
 {
-	int	size;
-	int	i;
-	int	len;
+	size_t	size;
+	int		i;
+	int		len;
 
 	i = 0;
 	size = 0;
-	len = array_len(map);
+	len = arr_lenght(map);
 	while (i < len)
 	{
 		if (i == 0)
@@ -40,7 +40,7 @@ int	close_test(char **map)
 	int	len;
 
 	i = 0;
-	len = array_len(map);
+	len = arr_lenght(map);
 	while (i < len)
 	{
 		if (map[i][0] == '\0')
@@ -50,7 +50,7 @@ int	close_test(char **map)
 	return (1);
 }
 
-int	item_count(char **map, char item)	
+int	item_count(char **map, char item)
 {
 	int	i;
 	int	j;
