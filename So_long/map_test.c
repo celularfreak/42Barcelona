@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/20 13:51:13 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:06:38 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,13 @@ int	item_count(char **map, char item)
 	}
 	return (count);
 }
+
+void	map_tester(char *map)
+{
+	int	error;
+
+	errors = 0;
+	if (rectangle_test(map == 0)
+		errors++;
+	if (error > 1)
+	
