@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/20 13:06:16 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/21 09:29:50 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	put_image(t_vars *master, void *img, int x, int y);
 int		rectangle_test(char **map);
 int		close_test(char **map);
 int		item_count(char **map, char item);
+void	map_tester(char **map);
 //int		events(int keycode, t_vars *master);
 
 #endif

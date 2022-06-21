@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/16 12:21:48 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/21 11:51:03 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	master.map = map_opp(argv[1]);
+	map_tester(master.map);
 	master.mlx = mlx_init();
 	ini_img(&master);
 	if (!master.ground)
