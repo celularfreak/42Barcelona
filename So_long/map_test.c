@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/21 14:28:28 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/22 10:24:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@ int	rectangle_test(char **map)
 {
 	size_t	size;
 	int		i;
-	int		len;
 
 	i = 0;
 	size = 0;
-	len = arr_lenght(map);
-	while (i < len)
+	while (i < arr_lenght(map))
 	{
 		if (i == 0)
 			size = ft_strlen(map[i]);
-		else if (size != ft_strlen(map[i]) && i < len - 1)
+		else if (size != ft_strlen(map[i]) && i < arr_lenght(map) - 1)
 			return (0);
-		else if (size != ft_strlen(map[i]) + 1 && i == len - 1)
+		else if (size != ft_strlen(map[i]) + 1 && i == arr_lenght(map) - 1)
 			return (0);
 		i++;
 	}
@@ -38,30 +36,19 @@ int	close_test(char **map)
 {
 	size_t	i;
 	int		j;
-	int		len;
-	int 	len2;
+
 	i = 0;
-	len = arr_lenght(map);
-	len2 = ft_strlen(map[0]);
 	while (i < (ft_strlen(map[0]) - 1))
 	{
-		if (map[0][i] != '1' || map[(len - 1)][i] != '1')
-			{
-				printf("\n1\n");
-				return (0);
-			}
+		if (map[0][i] != '1' || map[(arr_lenght(map) - 1)][i] != '1')
+			return (0);
 		i++;
 	}
 	j = 1;
-	while (j < (arr_lenght(map) -  1))
+	while (j < (arr_lenght(map) - 1))
 	{
-		if (map[j][0] != '1' || map[j][(len2 - 2)] != '1')
-			{
-				printf("%d %d", map[j][0], map[j][(len2 - 1)]);
-				printf("\n2\n");
-				printf("%d\n", j);
+		if (map[j][0] != '1' || map[j][(ft_strlen(map[0]) - 2)] != '1')
 			return (0);
-			}
 		j++;
 	}
 	return (1);
