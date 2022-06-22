@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/22 10:24:43 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:38:45 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	close_test(char **map)
 	return (1);
 }
 
-int	item_count(char **map, char item)
+int	item_test(char **map, char item)
 {
 	int	i;
 	int	j;
@@ -76,25 +76,40 @@ int	item_count(char **map, char item)
 	return (count);
 }
 
+int	no_valid_item_test(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] != '0' && map[i][j] != '1' &&
+					map[i][j] != 'C' && map[i][j] != 'P' &&
+					map[i][j] != 'E' && map[i][j] != '\n')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 void	map_tester(char **map)
 {
-	int		bug;
 
-	bug = 0;
 	if (rectangle_test(map) == 0)
-	{
-		bug++;
 		printf("Map must be a rectangle\n");
-	}
 	if (close_test(map) == 0)
-	{
-		bug++;
 		printf("Map must be closed\n");
-	}
-	if (bug >= 1)
-	 {
-		printf("%d bugs found\n", bug);
+	if (no_valid_item_test(map) == 0)
+		printf("Map must have valid items\n");
+	if (item_test(map, 'P') != 1)
+		printf("Map must have one 'P'\n");
+	if (item_test(map, 'E') != 1)
+		printf("Map must have one 'E'\n");
 		exit (0);
-		//bug += printf("Map is not valid\n");
-	 }
 }
