@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/05/27 12:40:29 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:28:19 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,11 @@ char	**map_opp(char *orig_map)
 
 	i = 0;
 	fd = open(orig_map, O_RDONLY);
-	if (fd == -1)
+	if (fd < 0)
+	{
 		printf("Error: Not a map in the file\n");
+		exit (0);
+	}
 	map = ft_calloc(sizeof(char *), 1);
 	if (!map)
 		printf("Error: Malloc failed\n");

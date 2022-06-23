@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/22 16:38:45 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:22:21 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,15 @@ int	rectangle_test(char **map)
 		if (i == 0)
 			size = ft_strlen(map[i]);
 		else if (size != ft_strlen(map[i]) && i < arr_lenght(map) - 1)
-			return (0);
+		{
+			printf("Error: map is not rectangular");
+			exit (0);
+		}
 		else if (size != ft_strlen(map[i]) + 1 && i == arr_lenght(map) - 1)
-			return (0);
+		{	
+			printf("Error: map is not rectangular");
+			exit (0);
+		}
 		i++;
 	}
 	return (1);
@@ -41,14 +47,20 @@ int	close_test(char **map)
 	while (i < (ft_strlen(map[0]) - 1))
 	{
 		if (map[0][i] != '1' || map[(arr_lenght(map) - 1)][i] != '1')
-			return (0);
+		{
+			printf("Error: map is not closed");
+			exit (0);
+		}
 		i++;
 	}
 	j = 1;
 	while (j < (arr_lenght(map) - 1))
 	{
 		if (map[j][0] != '1' || map[j][(ft_strlen(map[0]) - 2)] != '1')
-			return (0);
+		{
+			printf("Error: map is not closed");
+			exit (0);
+		}
 		j++;
 	}
 	return (1);
@@ -90,7 +102,10 @@ int	no_valid_item_test(char **map)
 			if (map[i][j] != '0' && map[i][j] != '1' &&
 					map[i][j] != 'C' && map[i][j] != 'P' &&
 					map[i][j] != 'E' && map[i][j] != '\n')
-				return (0);
+			{
+				printf("Error: map contains invalid item");
+				exit (0);
+			}
 			j++;
 		}
 		i++;
@@ -99,17 +114,23 @@ int	no_valid_item_test(char **map)
 }
 
 void	map_tester(char **map)
-{
-
-	if (rectangle_test(map) == 0)
-		printf("Map must be a rectangle\n");
-	if (close_test(map) == 0)
-		printf("Map must be closed\n");
-	if (no_valid_item_test(map) == 0)
-		printf("Map must have valid items\n");
+{		
+	rectangle_test(map);
+	close_test(map);
+	no_valid_item_test(map);
 	if (item_test(map, 'P') != 1)
-		printf("Map must have one 'P'\n");
-	if (item_test(map, 'E') != 1)
-		printf("Map must have one 'E'\n");
+	{
+		printf("Map must have one Player\n");
 		exit (0);
+	}
+	if (item_test(map, 'E') != 1)
+	{
+		printf("Map must have one Exit\n");
+		exit (0);
+	}
+	if (item_test(map, 'C') == 0)
+	{
+		printf("Map must have one Colectible\n");
+		exit (0);
+	}
 }
