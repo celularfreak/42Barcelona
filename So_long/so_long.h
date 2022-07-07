@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/07 08:50:25 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/07 10:30:01 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int		rectangle_test(char **map);
 int		close_test(char **map);
 int		item_test(char **map, char item);
 void	map_tester(char **map);
-//int		events(int keycode, t_vars *master);
+int		key_press(int keycode, t_character *character, t_vars *master);
 
 #endif
