@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/22 11:10:58 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/07 08:50:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include 	<fcntl.h>
 #include 	<unistd.h>
 #include 	<sys/uio.h>
+#include 	<string.h>
 
 typedef struct s_character
 {
