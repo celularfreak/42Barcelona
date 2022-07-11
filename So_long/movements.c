@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/08 15:27:26 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/11 10:47:44 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,22 @@ void	player_pos(char **map, t_vars *master)
 char	key_press(int keycode, t_vars *master)
 {
 	if (keycode == 13 || keycode == 126)
-		
-		master->player_pos_x++;
+	{
+		master->player_pos_y++;
 		return ("W");
+	}
 	if (keycode == 0 || keycode == 123)
-		return ("A");
+		{
+			master->player_pos_x--;
+			return ("A");
+		}
 	if (keycode == 1 || keycode == 125)
-		return ("S");
+		{
+			master->player_pos_y--;
+			return ("S");
+		}
 	if (keycode == 2 || keycode == 124)
+		
 		return ("D");
 	if (keycode == 53)
 	{
