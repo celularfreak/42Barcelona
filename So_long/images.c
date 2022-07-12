@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:27:27 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/23 16:32:23 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:55:37 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ins_img(t_vars *master, int x, int y)
 	int	k[2];
 
 	k[0] = -1;
+	master->total_ring = 0;
 	while (++k[0] <= (x - 1))
 	{
 		k[1] = -1;
@@ -57,9 +58,9 @@ void	put_image(t_vars *master, void *img, int x, int y)
 	mlx_put_image_to_window(master->mlx, master->win, img, x * SIZE, y * SIZE);
 	if (img == master->sonic)
 	{
-		master->character.x = x;
-		master->character.y = y;
+		master->player_pos_x = x;
+		master->player_pos_y = y;
 	}
 	if (img == master->ring)
-		master->item_count++;
+		master->total_ring++;
 }
