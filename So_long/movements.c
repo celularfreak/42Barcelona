@@ -6,11 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/07/11 10:47:44 by dnunez-m         ###   ########.fr       */
-=======
-/*   Updated: 2022/07/11 16:24:57 by dnunez-m         ###   ########.fr       */
->>>>>>> refs/remotes/origin/master
+/*   Updated: 2022/07/12 10:59:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +65,4 @@ char	key_press(int keycode, t_vars *master)
 
 void map_mov(t_vars *master)
 {
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/master
 }
