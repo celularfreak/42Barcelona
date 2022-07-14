@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 12:31:59 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:22:41 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	key_press(int keycode, t_vars *master)
 	if (keycode == 2 || keycode == 124)
 		key_right(master);
 	if (keycode == 53)
-		exit(0);
+		free_exit(master);
 	return (0);
 }
 
@@ -37,7 +37,7 @@ void	key_up(t_vars *master)
 			[master->player_pos_x] == 'E' && master->total_ring == 0)
 		{
 			num_mov(master);
-			exit(0);
+			free_exit(master);
 		}
 		master->player_pos_y--;
 		num_mov(master);
@@ -57,7 +57,7 @@ void	key_left(t_vars *master)
 			&& master->total_ring == 0)
 		{
 			num_mov(master);
-			exit(0);
+			free_exit(master);
 		}
 		master->player_pos_x--;
 		num_mov(master);
@@ -77,7 +77,7 @@ void	key_right(t_vars *master)
 			&& master->total_ring == 0)
 		{
 			num_mov(master);
-			exit(0);
+			free_exit(master);
 		}
 		master->player_pos_x++;
 		num_mov(master);
@@ -97,7 +97,7 @@ void	key_down(t_vars *master)
 			&& master->total_ring == 0)
 		{
 			num_mov(master);
-			exit(0);
+			free_exit(master);
 		}
 		master->player_pos_y++;
 		num_mov(master);
@@ -106,4 +106,3 @@ void	key_down(t_vars *master)
 	}
 	ins_img(master, master->size_w, master->size_h);
 }
-

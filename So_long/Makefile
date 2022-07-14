@@ -6,16 +6,16 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/07/14 12:14:06 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/07/14 15:10:34 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS 	= so_long.c \
-			./srcs/map_conv.c \
-			./srcs/map_test.c \
-			./srcs/images.c \
-			./srcs/movements.c\
-			./srcs/movements_extra.c\
+			./src/map_conv.c \
+			./src/map_test.c \
+			./src/images.c \
+			./src/movements.c\
+			./src/movements_extra.c\
 			./get_next_line/get_next_line.c \
 			./get_next_line/get_next_line_utils.c \
 

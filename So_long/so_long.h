@@ -6,25 +6,24 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 12:07:41 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:50:19 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#define		SIZE 50
-#include 	"./mlx/mlx.h"
-#include 	"./libft/libft.h"
-#include 	"./Printf/ft_printf.h"
-#include 	"./get_next_line/get_next_line.h"
-#include 	<stdlib.h>
-#include 	<stdio.h>
-#include 	<math.h>
-#include 	<fcntl.h>
-#include 	<unistd.h>
-#include 	<sys/uio.h>
-#include 	<string.h>
+# define SIZE 50
+# include "./mlx/mlx.h"
+# include "./libft/libft.h"
+# include "./Printf/ft_printf.h"
+# include "./get_next_line/get_next_line.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <sys/uio.h>
+# include <string.h>
 
 typedef struct s_vars
 {
@@ -43,7 +42,7 @@ typedef struct s_vars
 	int				player_pos_y;
 	int				num_mov;
 
-}					t_vars;
+}t_vars;
 
 int		arr_lenght(char **arr);
 char	**line_add(char **arr, char *str);
@@ -64,5 +63,5 @@ void	key_right(t_vars *master);
 void	num_mov(t_vars *master);
 int		can_move(t_vars *master, int x, int y);
 void	error_msg(char *err);
-//int		free_exit(t_vars *master);
+int		free_exit(t_vars *master);
 #endif

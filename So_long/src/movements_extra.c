@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:23:07 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 12:07:29 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:38:58 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	num_mov(t_vars *master)
 {
 	master->num_mov++;
-	write(1, "Movement: ", 10);
-	ft_putnbr_fd(master->num_mov, 1);
-	write(1, "\r", 1);
+	ft_printf("Movement: %d\r", master->num_mov);
 }
 
 int	can_move(t_vars *master, int x, int y)
@@ -34,10 +32,16 @@ int	can_move(t_vars *master, int x, int y)
 		return (0);
 }
 
-/*int	free_exit(t_vars *master)
+int	free_exit(t_vars *master)
 {
-	//mlx_destroy_window(master->mlx, master->win);
-	//free(master->map);
-	//free(master);
+	int	i;
+
+	i = 0;
+	if (master->num_mov > 0)
+		ft_printf("\n");
+	mlx_destroy_window(master->mlx, master->win);
+	while (master->map[i] != NULL)
+		free(master->map[i++]);
+	free (master->map);
 	exit(0);
-}*/
+}
