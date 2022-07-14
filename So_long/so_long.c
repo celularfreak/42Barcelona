@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 15:06:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:57:36 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int	main(int argc, char **argv)
 	t_vars		master;
 	char		*end;
 
+	if (argc != 2)
+		error_msg("Usage: ./so_long <map>");
 	end = ft_strrchr(argv[1], '.');
-	if (argc == 1)
-		return (0);
-	if (ft_strncmp(end, ".ber", 3) == 0)
+	if (!end)
+		error_msg("Map file must have a .map extension");
+	if (ft_strncmp(end, ".ber", 3) == 0 && !(ft_strlen(end) > 4))
 	{
 		master.map = map_opp(argv[1]);
 		map_tester(master.map);
@@ -36,6 +38,5 @@ int	main(int argc, char **argv)
 		mlx_loop(master.mlx);
 	}
 	else
-		error_msg("Error: File is not a .ber file");
-	return (0);
+		error_msg("File is not a .ber file");
 }

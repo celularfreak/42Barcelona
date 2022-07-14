@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/07/14 15:10:34 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/07/14 17:59:22 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS 	= so_long.c \
 			./src/movements_extra.c\
 			./get_next_line/get_next_line.c \
 			./get_next_line/get_next_line_utils.c \
+
 
 CFLAGS 	= -Wall -Wextra -Werror
 

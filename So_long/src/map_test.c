@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 09:47:39 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:26:18 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	rectangle_test(char **map)
 		if (i == 0)
 			size = ft_strlen(map[i]);
 		else if (size != ft_strlen(map[i]) && i < arr_lenght(map) - 1)
-			error_msg("Error: Map is not rectangular");
+			error_msg("Map is not rectangular");
 		else if (size != ft_strlen(map[i]) + 1 && i == arr_lenght(map) - 1)
-			error_msg("Error: Map is not rectangular");
+			error_msg("Map is not rectangular");
 		i++;
 	}
 	return (1);
@@ -41,14 +41,14 @@ int	close_test(char **map)
 	while (i < (ft_strlen(map[0]) - 1))
 	{
 		if (map[0][i] != '1' || map[(arr_lenght(map) - 1)][i] != '1')
-			error_msg("Error: Map is not closed");
+			error_msg("Map is not closed");
 		i++;
 	}
 	j = 1;
 	while (j < (arr_lenght(map) - 1))
 	{
 		if (map[j][0] != '1' || map[j][(ft_strlen(map[0]) - 2)] != '1')
-			error_msg("Error: Map is not closed");
+			error_msg("Map is not closed");
 		j++;
 	}
 	return (1);
@@ -90,7 +90,7 @@ int	no_valid_item_test(char **map)
 			if (map[i][j] != '0' && map[i][j] != '1' &&
 					map[i][j] != 'C' && map[i][j] != 'P' &&
 					map[i][j] != 'E' && map[i][j] != '\n')
-				error_msg("Error: Map has invalid item");
+				error_msg("Map has invalid item");
 			j++;
 		}
 		i++;
@@ -104,9 +104,9 @@ void	map_tester(char **map)
 	close_test(map);
 	no_valid_item_test(map);
 	if (item_test(map, 'P') != 1)
-		error_msg("Error: Map must have one player");
+		error_msg("Map must have one player");
 	if (item_test(map, 'E') != 1)
-		error_msg("Error: Map must have one exit");
+		error_msg("Map must have one exit");
 	if (item_test(map, 'C') == 0)
-		error_msg("Error: Map must have at least one checkpoint");
+		error_msg("Map must have at least one checkpoint");
 }

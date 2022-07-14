@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:01:31 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/02/15 11:56:52 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/07/14 18:08:45 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) ft_printf.h
 				ar rcs $(NAME) $(OBJS)
 
 bonus: 			$(OBJS) $(OBJS_B)
