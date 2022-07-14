@@ -6,11 +6,11 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/06/23 16:28:19 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:03:30 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	arr_lenght(char **arr)
 {
@@ -51,13 +51,10 @@ char	**map_opp(char *orig_map)
 	i = 0;
 	fd = open(orig_map, O_RDONLY);
 	if (fd < 0)
-	{
-		printf("Error: Not a map in the file\n");
-		exit (0);
-	}
+		error_msg("Error: Not a map in the file");
 	map = ft_calloc(sizeof(char *), 1);
 	if (!map)
-		printf("Error: Malloc failed\n");
+		error_msg("Error: Malloc failed");
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -69,4 +66,10 @@ char	**map_opp(char *orig_map)
 	}
 	close(fd);
 	return (map);
+}
+
+void	error_msg(char *err)
+{
+	ft_printf("Error: %s\n", err);
+	exit(0);
 }

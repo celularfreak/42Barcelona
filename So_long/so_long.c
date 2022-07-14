@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/12 11:57:00 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 11:23:38 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		master.mlx = mlx_init();
 		ini_img(&master);
 		if (!master.ground)
-			write(1, "Error loading ground image\n", 26);
+			error_msg("Error: Ground is not initialized");
 		master.size_w = (ft_strlen(master.map[0]) - 1);
 		master.size_h = arr_lenght(master.map);
 		master.win = mlx_new_window(master.mlx, master.size_w * SIZE,
@@ -37,5 +37,5 @@ int	main(int argc, char **argv)
 		mlx_loop(master.mlx);
 	}
 	else
-		write(1, "Error: Wrong file type\n", 23);
+		error_msg("Error: File is not a .ber file");
 }

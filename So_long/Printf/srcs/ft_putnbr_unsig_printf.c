@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_unsig_printf.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 10:24:25 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/02 15:46:54 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 11:35:39 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../ft_printf.h"
 
-int	ft_toupper(int c)
+unsigned int	ft_putnbr_unsig_printf(unsigned int n)
 {
-	if ((c >= 'a') && (c <= 'z' ))
-			c = c - 32;
-	return (c);
+	int		size;
+	char	*num;
+
+	size = 0;
+	if (n == 0)
+		size += write(1, "0", 1);
+	else
+	{
+		num = ft_itoa_unsigned(n);
+		size = ft_putstr_printf(num);
+		free(num);
+	}
+	return (size);
 }

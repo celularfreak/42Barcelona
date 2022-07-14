@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 10:24:25 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/02 15:46:54 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 11:35:34 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../ft_printf.h"
 
-int	ft_toupper(int c)
+int	ft_putnbr_printf(int n)
 {
-	if ((c >= 'a') && (c <= 'z' ))
-			c = c - 32;
-	return (c);
+	int		size;
+	char	*num;
+
+	size = 0;
+	num = ft_itoa(n);
+	size = ft_putstr_printf(num);
+	free(num);
+	return (size);
 }

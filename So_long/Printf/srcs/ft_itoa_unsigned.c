@@ -1,20 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 10:24:25 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/01/30 13:13:00 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 13:55:51 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../ft_printf.h"
 
-int	ft_toupper(int c)
+int	ft_size_un(unsigned int n)
+{	
+	int	len;
+
+	len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa_unsigned(unsigned int n)
 {
-	if ((c >= 'a') && (c <= 'z' ))
-			c = c - 32;
-	return (c);
+	char	*str;
+	int		size;
+
+	size = ft_size_un(n);
+	str = ft_calloc(sizeof(char), (size + 1));
+	if (!str)
+		return (NULL);
+	while (n != 0)
+	{
+		str[size - 1] = '0' + n % 10;
+		n = n / 10;
+		size--;
+	}
+	return (str);
 }

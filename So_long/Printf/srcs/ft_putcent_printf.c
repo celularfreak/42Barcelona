@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putcent_printf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:12:19 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 10:24:25 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/02/14 21:34:34 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/02/15 12:06:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../ft_printf.h"
 
-int	ft_toupper(int c)
+int	ft_putcent_printf(void)
 {
-	if ((c >= 'a') && (c <= 'z' ))
-			c = c - 32;
-	return (c);
+	write(1, "%", 1);
+	return (1);
 }

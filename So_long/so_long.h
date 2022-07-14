@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/12 15:59:02 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:07:41 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #define		SIZE 50
 #include 	"./mlx/mlx.h"
 #include 	"./libft/libft.h"
+#include 	"./Printf/ft_printf.h"
 #include 	"./get_next_line/get_next_line.h"
 #include 	<stdlib.h>
 #include 	<stdio.h>
@@ -61,4 +62,7 @@ void	key_left(t_vars *master);
 void	key_down(t_vars *master);
 void	key_right(t_vars *master);
 void	num_mov(t_vars *master);
+int		can_move(t_vars *master, int x, int y);
+void	error_msg(char *err);
+//int		free_exit(t_vars *master);
 #endif
