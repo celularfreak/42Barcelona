@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 19:12:32 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 19:18:02 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ char	**map_opp(char *orig_map)
 
 	i = 0;
 	fd = open(orig_map, O_RDONLY);
-
 	if (fd == -1)
 		error_msg("Not a map in the file");
 	map = ft_calloc(sizeof(char *), 1);
