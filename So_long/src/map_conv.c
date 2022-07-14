@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 19:18:02 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/14 19:49:51 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ char	**map_opp(char *orig_map)
 		line = get_next_line(fd);
 		if (line != NULL)
 			map = line_add(map, line);
+		else if (line == NULL && i == 0)
+			error_msg("Map is empty");
 		else
-			error_msg("Map file is empty");
+			break ;
 		i++;
 	}
 	close(fd);
