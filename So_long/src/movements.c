@@ -6,11 +6,12 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:54 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 15:22:41 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include "../mlx/mlx.h"
 
 int	key_press(int keycode, t_vars *master)
 {

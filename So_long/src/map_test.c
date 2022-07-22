@@ -6,11 +6,12 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:00:56 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 18:26:18 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:36 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include "../libft/libft.h"
 
 int	rectangle_test(char **map)
 {

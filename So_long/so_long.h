@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:38 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 18:01:23 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:07:55 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define SO_LONG_H
 
 # define SIZE 50
-# include "./mlx/mlx.h"
-# include "./libft/libft.h"
-# include "./Printf/ft_printf.h"
-# include "./get_next_line/get_next_line.h"
+//# include "./mlx/mlx.h"
+//# include "./libft/libft.h"
+//# include "./Printf/ft_printf.h"
+//# include "./get_next_line/get_next_line.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>

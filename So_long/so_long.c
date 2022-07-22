@@ -6,11 +6,13 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:32:44 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 18:57:36 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:07:57 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "./libft/libft.h"
+#include "./mlx/mlx.h"
 
 int	main(int argc, char **argv)
 {	

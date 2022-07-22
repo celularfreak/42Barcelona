@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:01:31 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/07/14 18:08:45 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/07/22 12:41:12 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,14 @@ NAME = libftprintf.a
 
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD
+DEPS = $(addsuffix .d, $(basename $(SRCS)))
+
 .c.o: ${CC} ${CFLAGS} -I ft_printf.h -c $< -o ${<:.c=.o}
 
 all:			$(NAME)
 
+-include $(DEPS)
 $(NAME):		$(OBJS) ft_printf.h
 				ar rcs $(NAME) $(OBJS)
 
@@ -33,6 +36,7 @@ bonus: 			$(OBJS) $(OBJS_B)
 				ar rcs $(NAME) $(OBJS)		
 
 clean:
+				${RM} ${OBJS} ${DEPS} ${DEPS2}
 				$(RM) $(OBJS) 
 
 fclean:			clean

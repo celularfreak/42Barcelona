@@ -6,11 +6,14 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 19:49:51 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:28 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include "../libft/libft.h"
+#include "../Printf/ft_printf.h"
+#include "../get_next_line/get_next_line.h"
 
 int	arr_lenght(char **arr)
 {

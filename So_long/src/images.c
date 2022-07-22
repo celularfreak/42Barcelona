@@ -6,11 +6,12 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:27:27 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/07/14 09:18:22 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:31 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include "../mlx/mlx.h"
 
 t_vars	*ini_img(t_vars *master)
 {
