@@ -28,20 +28,25 @@ OBJS_B = $(FILES_B:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD
 
 NAME = libft.a
 
 RM 		= rm -f
 
+DEPS = $(addsuffix .d, $(basename $(FILES_C)))
+DEPS2 = $(addsuffix .d, $(basename $(FILES_B)))
+
 .c.o: ${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
 
 all:			$(NAME)
 
+-include $(DEPS)
 $(NAME):		$(OBJS) libft.h
 				ar -rcs $(NAME) $(OBJS)
 				ranlib $(NAME)
 
+-include $(DEPS2)
 bonus:			.bonus
 
 .bonus: 		$(OBJS) $(OBJS_B) libft.h 
@@ -50,7 +55,8 @@ bonus:			.bonus
 				@touch $@
 
 clean:
-				$(RM) $(OBJS) $(OBJS_B)
+				${RM} ${OBJS} ${DEPS} ${DEPS2}
+				$(RM) $(OBJS) $(OBJS_B) 
 
 fclean:			clean
 				$(RM) $(NAME) 
