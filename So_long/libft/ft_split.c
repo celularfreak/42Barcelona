@@ -6,74 +6,77 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 18:21:47 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/02 13:19:57 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/13 09:24:31 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	num_word(const char *str, char c)
+static int	countwords(char *s, char c)
 {
-	int	i;
-	int	cut;
+	size_t	num;
 
-	i = 0;
-	cut = 0;
-	if (!str)
-		return (0);
-	while (*str)
+	num = 0;
+	if (*s && *s != c)
 	{
-		if (*str != c && cut == 0)
-		{
-			cut = 1;
-			i++;
-		}
-		else if (*str == c)
-			cut = 0;
-		str++;
+		num++;
+		s++;
 	}
-	return (i);
+	while (*s)
+	{
+		if (*s != c && *(s - 1) == c)
+			num++;
+		s++;
+	}	
+	return (num);
 }
 
-static char	*dupli(const char *str, int ini, int fin)
+static char	*getword(char *s, char c, size_t item)
 {
-	char	*word;
-	int		i;
+	size_t	start;
+	size_t	end;
+	size_t	k;
+	size_t	i;
 
+	start = 0;
+	end = 0;
+	k = -1;
 	i = 0;
-	word = malloc((fin - ini + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	while (ini < fin)
-		word[i++] = str[ini++];
-	word[i] = '\0';
-	return (word);
+	while (++k <= item)
+	{
+		while (s[i] == c)
+			start = ++i;
+		while (s[i] && s[i] != c)
+			end = i++;
+	}
+	return (ft_substr(s, start, end - start + 1));
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		ind;
-	char	**split;
+	long long	num;
+	char		**str;
+	long long	i;
 
-	split = malloc((num_word(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	num = 0;
+	if (!s)
 		return (NULL);
-	i = 0;
-	j = 0;
-	ind = -1;
-	while (i <= ft_strlen(s))
+	num = countwords((char *)s, c);
+	str = (char **)ft_calloc(sizeof(char *), (size_t)(num + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
+	while (++i < num)
 	{
-		if (s[i] != c && ind < 0)
-			ind = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && ind >= 0)
+		str[i] = getword((char *)s, c, (size_t)i);
+		if (!str[i])
 		{
-			split[j++] = dupli(s, ind, i);
-			ind = -1;
-		}
-		i++;
+			while (--i >= 0)
+				free (str[i]);
+			free (str);
+			return (NULL);
+		}	
 	}
-	split[j] = 0;
-	return (split);
+	str[i] = NULL;
+	return (str);
 }
