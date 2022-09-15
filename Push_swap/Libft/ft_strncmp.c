@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_printf.c                                :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 15:10:06 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/16 22:39:22 by dnunez-m         ###   ########.fr       */
+/*   Created: 2021/11/11 11:41:33 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/07/14 17:37:50 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar_printf(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	write(1, &c, 1);
-	return (1);
+	unsigned int	i;	
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+	i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

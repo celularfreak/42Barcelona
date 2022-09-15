@@ -1,94 +1,65 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/27 11:35:08 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/04/27 13:30:38 by dnunez-m         ###   ########.fr        #
+#    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
+#    Updated: 2022/07/22 12:41:14 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#========= General variables =========#
-#=====================================#
+SRCS 	= so_long.c \
+			./src/map_conv.c \
+			./src/map_test.c \
+			./src/images.c \
+			./src/movements.c\
+			./src/movements_extra.c\
+			./get_next_line/get_next_line.c \
+			./get_next_line/get_next_line_utils.c \
 
-NAME := example
-INCLUDE_DIR := include
-SRC_DIR := src
-LIBS_DIR := libs
-OBJS_DIR := objs
-PROGRAM_LOCATION := $(BIN_DIR)/$(NAME)
 
-#=====================================#
-#============ Input files ============#
-#=====================================#
+CFLAGS 	= -Wall -Wextra -Werror -MMD
 
-LIBS := $(LIBS_DIR)/LibFT/libft.a \
-		$(LIBS_DIR)/Get-Next-Line/get-next-line.a \
-		$(LIBS_DIR)/PrintFT/ft_printf.a \
+OBJS 	= ${SRCS:.c=.o}
 
-LIBS_HEADERS := -I $(LIBS_DIR)/LibFT/include/ \
-				-I $(LIBS_DIR)/Get-Next-Line/include/ \
-				-I $(LIBS_DIR)/PrintFT/include/ \
+NAME 	= so_long
 
-INC := -I $(INCLUDE_DIR) $(LIBS_HEADERS)
+HEADER	= so_long.h
 
-SRCS := main.c \
-		test.c \
+RM 		= rm -f
 
-OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
+DEPS = $(addsuffix .d, $(basename $(SRCS)))
 
-#=====================================#
-#========= Command arguments =========#
-#=====================================#
+all:		libs ${NAME} 
 
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g $(INC)
-LDFLAGS =
+-include $(DEPS)
 
-#=====================================#
-#=============== Rules ===============#
-#=====================================#
+${NAME}:	${OBJS} ${HEADER}
+			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit Printf/libftprintf.a libft/libft.a mlx/libmlx.a ${OBJS} -o ${NAME}
 
-objs/%.o:src/%.c
-	@mkdir -p $(dir $@)
-	@$(CC) -c $(CFLAGS) -o $@ $^
-	@echo "🔨 Compiling: $^"
+libs: 
+	make -C ./Printf
+	make -C ./libft
+	make -C mlx
+
+.c.o:	
 	
-all: $(NAME)
-
-$(NAME):$(OBJS) $(LIBS)
-	@$(CC) $(OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
-	@echo "✅ Built $(NAME)"
-
-$(LIBS_DIR)/LibFT/libft.a:
-	@make -C $(LIBS_DIR)/LibFT
-
-$(LIBS_DIR)/Get-Next-Line/get-next-line.a:
-	@make -C $(LIBS_DIR)/Get-Next-Line
-
-$(LIBS_DIR)/PrintFT/ft_printf.a:
-	@make -C $(LIBS_DIR)/PrintFT
-
-submodules:
-	@git submodule update --init --recursive
-	@cd $(LIBS_DIR)/LibFt/ && git pull
-	@cd $(LIBS_DIR)/Get-Next-Line/ && git pull
-	@cd $(LIBS_DIR)/PrintFT/ && git pull
-
-run: $(NAME)
-	./$(NAME)
+	gcc -c ${CFLAGS} -Imlx $< -o ${<:.c=.o}
 
 clean:
-	@rm -rf $(OBJS_DIR)
+			${RM} ${OBJS} ${DEPS}
+			make clean -C libft
+			make clean -C mlx
+			make clean -C Printf
 
-fclean: clean
-	@make fclean -C $(LIBS_DIR)/Get-Next-Line
-	@make fclean -C $(LIBS_DIR)/PrintFT
-	@make fclean -C $(LIBS_DIR)/LibFT
-	@rm -f $(NAME)
+fclean:		clean 
+			${RM} ${NAME} 
+			make fclean -C libft
+			make clean -C mlx
+			make fclean -C Printf
 
-re: fclean all
+re:			fclean all
 
-.PHONY: all re run clean fclean
+.PHONY:		all clean fclean re

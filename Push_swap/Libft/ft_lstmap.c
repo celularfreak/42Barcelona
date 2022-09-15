@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_printf.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:22:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/02/15 11:35:43 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/02/01 15:40:57 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/13 09:20:08 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../ft_printf.h"
+#include "libft.h"
 
-void	case_null(char *str)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	b;
+	t_list	*new;
+	t_list	*ini;
+	void	*content;
 
-	b = 0;
-	while (str[b])
+	if (!lst)
+		return (NULL);
+	new = NULL;
+	while (lst)
 	{
-		write(1, &str[b], 1);
-		b++;
+		content = f(lst->content);
+		ini = ft_lstnew(content);
+		if (!ini)
+		{
+			if (content)
+				free(content);
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, ini);
+		lst = lst->next;
 	}
-}
-
-int	ft_putstr_printf(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-	{
-		case_null("(null)");
-		return (6);
-	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	return (new);
 }
