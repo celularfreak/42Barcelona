@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/15 19:21:03 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/16 14:43:10 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#indef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/push_swap.h"
+#include "../Libft/libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-int	push_swap(int argc, char **argv);
-
-#endif
+int	main(int argc, char **argv)
+{
+	t_vars	master;
+	
+}

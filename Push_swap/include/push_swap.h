@@ -1,12 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/15 19:22:00 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/16 14:31:48 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+typedef struct s_vars
+{
+	int				*stack1;
+	int				*stack2;
+	int				*tempstack;
+}t_vars;
+
+#endif
