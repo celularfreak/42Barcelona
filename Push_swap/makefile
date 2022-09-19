@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/16 14:41:12 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/09/19 11:31:29 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HEADER	= ./include/push_swap.h
 
 RM 		= rm -f
 
-DEPS = $(addsuffix .d, $(basename $(SRCS)))
+DEPS = $(addsuffix .d, $(basename $(OBJS)))
 
 all:		libs ${NAME} 
 
@@ -35,8 +35,7 @@ libs:
 	make -C ./libft
 
 .c.o:	
-	
-	gcc -c ${CFLAGS} -Imlx $< -o ${<:.c=.o}
+	gcc -c ${CFLAGS} -I ./include/ $< -o ${OBJS}
 
 clean:
 			${RM} ${OBJS} ${DEPS}

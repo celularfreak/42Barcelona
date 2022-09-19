@@ -32,27 +32,28 @@ CFLAGS = -Wall -Wextra -Werror -MMD
 
 NAME = libft.a
 
+BONUS = libft_bonus.a
+
 RM 		= rm -f
 
 DEPS = $(addsuffix .d, $(basename $(FILES_C)))
 DEPS2 = $(addsuffix .d, $(basename $(FILES_B)))
 
-.c.o: ${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
+%.o: %.c 
+	${CC} ${CFLAGS} -I ./ -c $< -o ${<:.c=.o}
 
 all:			$(NAME)
 
 -include $(DEPS)
 $(NAME):		$(OBJS) libft.h
 				ar -rcs $(NAME) $(OBJS)
-				ranlib $(NAME)
 
 -include $(DEPS2)
-bonus:			.bonus
+bonus:			{BONUS}
 
-.bonus: 		$(OBJS) $(OBJS_B) libft.h 
+{BONUS}: 		$(OBJS) $(OBJS_B) libft.h 
 				ar -rcs $(NAME) $(OBJS) $(OBJS_B)
-				ranlib $(NAME)
-				@touch $@
+
 
 clean:
 				${RM} ${OBJS} ${DEPS} ${DEPS2}
