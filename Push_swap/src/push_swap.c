@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/19 13:52:17 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:01:14 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	master.stack1 = ft_calloc((argc - 1), sizeof(int));
-	master.stack2 = (int *)malloc(sizeof(int) * (argc - 1));
-	master.tempstack = (int *)malloc(sizeof(int) * (argc - 1));
+	master.stack2 = ft_calloc((argc - 1), sizeof(int));
+	master.tempstack = ft_calloc((argc - 1), sizeof(int));
 	if (!master.stack1 || !master.stack2 || !master.tempstack)
 		return (0);
 	while (argc > 1)
