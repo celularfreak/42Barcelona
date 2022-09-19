@@ -6,12 +6,12 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/16 15:56:26 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/19 09:01:58 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include "../Libft/libft.h"
+#include "../libft/libft.h"
 
 
 int	main(int argc, char **argv)
@@ -24,10 +24,9 @@ int	main(int argc, char **argv)
 	j = 0;
 	if (argc == 1)
 		return (0);
-		ft_calloc
-		master.stack1 =ft_calloc(sizeof(int) * (argc - 1));
-	master.stack2 = (int *)ft_calloc(sizeof(int) * (argc - 1));
-	master.tempstack = (int *)ft_calloc(sizeof(int) * (argc - 1));
+	master.stack1 = ft_calloc((argc - 1), sizeof(int));
+	master.stack2 = (int *)malloc(sizeof(int) * (argc - 1));
+	master.tempstack = (int *)malloc(sizeof(int) * (argc - 1));
 	if (!master.stack1 || !master.stack2 || !master.tempstack)
 		return (0);
 	while (argc > 1)

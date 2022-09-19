@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/16 15:04:26 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/19 09:01:26 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../Libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_vars
 {
