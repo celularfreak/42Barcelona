@@ -45,13 +45,13 @@ DEPS2 = $(addsuffix .d, $(basename $(FILES_B)))
 all:			$(NAME)
 
 -include $(DEPS)
-$(NAME):		$(OBJS) libft.h
+$(NAME):		$(OBJS)
 				ar -rcs $(NAME) $(OBJS)
 
 -include $(DEPS2)
 bonus:			{BONUS}
 
-{BONUS}: 		$(OBJS) $(OBJS_B) libft.h 
+{BONUS}: 		$(OBJS) $(OBJS_B) 
 				ar -rcs $(NAME) $(OBJS) $(OBJS_B)
 
 

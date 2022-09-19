@@ -1,18 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/19 11:31:29 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/09/19 14:02:09 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 	= ./src/push_swap.c
+SRCS 	= ./src/push_swap.c \
 
-CFLAGS 	= -Wall -Wextra -Werror -MMD
+CFLAGS 	= -Wall -Wextra -Werror
 
 OBJS 	= ${SRCS:.c=.o}
 
@@ -24,18 +24,18 @@ RM 		= rm -f
 
 DEPS = $(addsuffix .d, $(basename $(OBJS)))
 
+%.o: %.c
+	gcc -c ${CFLAGS} -MMD -I ./include/ -I ./libft/ $< -o ${OBJS}
+	
 all:		libs ${NAME} 
 
 -include $(DEPS)
 
 ${NAME}:	${OBJS} ${HEADER}
-			gcc ${CFLAGS} libft/libft.a ${OBJS} -o ${NAME}
+			gcc ${CFLAGS} -L libft/ ${OBJS} -o ${NAME} -lft
 
 libs: 
-	make -C ./libft
-
-.c.o:	
-	gcc -c ${CFLAGS} -I ./include/ $< -o ${OBJS}
+	make -C ./libft/
 
 clean:
 			${RM} ${OBJS} ${DEPS}
@@ -43,8 +43,7 @@ clean:
 
 fclean:		clean 
 			${RM} ${NAME} 
-			make fclean -C libft
-
+			
 re:			fclean all
 
 .PHONY:		all clean fclean re
