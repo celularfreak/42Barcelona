@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/20 12:34:28 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:42:34 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 
 typedef struct s_vars
 {
-	int				*stack1;
-	int				*stack2;
-	int				*tempstack;
+	int				*stack_a;
+	int				*stack_b;
+	int				*temp_stack;
 }t_vars;
 
-int	argv_check(int argc, char **argv);
+int		argv_check(int argc, char **argv);
+void	init_stacks(t_vars *master, int argc, char **argv);
 
 #endif

@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argv_check.c                                       :+:      :+:    :+:   */
+/*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 11:24:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/20 21:46:40 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/20 21:23:21 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/20 21:45:13 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static int	ft_strcmp(char *s1, char *s2)
-{
-	while (*s1 && *s2 == *s1)
-	{
-		++s1;
-		++s2;
-	}
-	return (*s1 - *s2);
-}	
-
-int	argv_check(int argc, char **argv)
+void	init_stacks(t_vars *master, int argc, char **argv)
 {
 	int		i;
-	int		temp;
 
-	i = 1;
+	i = 0;
+	master->stack_a = ft_calloc((argc - 1), sizeof(int));
+	master->stack_b = ft_calloc((argc - 1), sizeof(int));
+	master->temp_stack = ft_calloc((argc - 1), sizeof(int));
+	if (!master->stack_a || !master->stack_b || !master->temp_stack)
+		exit(0);
 	while (argc > 1)
 	{
-		temp = ft_atoi(argv[i]);
-		if (ft_strcmp(argv[i], ft_itoa(temp)) != 0)
-		{
-			write(1, "Error", 5);
-			return (1);
-		}
+		master->stack_a[i] = ft_atoi(argv[i + 1]);
+		master->stack_b[i] = ft_atoi(argv[i + 1]);
 		argc--;
 		i++;
 	}
-	return (0);
 }
