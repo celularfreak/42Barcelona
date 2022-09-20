@@ -6,33 +6,35 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/19 14:02:09 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/09/20 15:20:55 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 	= ./src/push_swap.c \
+SRCS 	= src/push_swap.c src/argv_check.c
 
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror -MMD 
 
 OBJS 	= ${SRCS:.c=.o}
 
 NAME 	= push_swap
 
-HEADER	= ./include/push_swap.h
+HEADER	= include/
 
 RM 		= rm -f
 
+CC 		= gcc
+
 DEPS = $(addsuffix .d, $(basename $(OBJS)))
 
-%.o: %.c
-	gcc -c ${CFLAGS} -MMD -I ./include/ -I ./libft/ $< -o ${OBJS}
+src/%.o:src/%.c
+	${CC} -c ${CFLAGS} -I ${HEADER} -I libft/ $< -o $@
 	
-all:		libs ${NAME} 
+all:	libs ${NAME} 
 
 -include $(DEPS)
 
-${NAME}:	${OBJS} ${HEADER}
-			gcc ${CFLAGS} -L libft/ ${OBJS} -o ${NAME} -lft
+${NAME}:	${OBJS} 
+			${CC} ${CFLAGS} -L libft/ ${OBJS} -o ${NAME} -lft
 
 libs: 
 	make -C ./libft/

@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   argv_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/20 12:34:28 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/20 11:24:53 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/20 17:27:33 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct s_vars
+static int	ft_strcmp(char *s1, char *s2)
 {
-	int				*stack1;
-	int				*stack2;
-	int				*tempstack;
-}t_vars;
+	while (*s1 && *s2 == *s1)
+	{
+		++s1;
+		++s2;
+	}
+	return (*s1 - *s2);
+}	
 
-int	argv_check(int argc, char **argv);
+int	argv_check(int argc, char **argv)
+{
+	int		i;
+	int		temp;
 
-#endif
+	i = 1;
+	while (argc > 1)
+	{
+		temp = ft_atoi(argv[i]);
+		if (ft_strcmp(argv[i], ft_itoa(temp)) != 0)
+			return (1);
+		argc--;
+		i++;
+	}
+	return (0);
+}

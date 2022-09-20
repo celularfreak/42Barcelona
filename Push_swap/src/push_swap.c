@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/19 15:01:14 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:22:18 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	master.tempstack = ft_calloc((argc - 1), sizeof(int));
 	if (!master.stack1 || !master.stack2 || !master.tempstack)
 		return (0);
+	if (argv_check(argc, argv) == 1)
+		exit(0);
 	while (argc > 1)
 	{
 		master.stack1[i] = ft_atoi(argv[i + 1]);
