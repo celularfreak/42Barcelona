@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   order_temp_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/21 12:07:54 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/21 12:09:59 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/21 12:10:10 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct s_vars
+void	order_temp_stack(t_vars *master, int argc)
 {
-	int				*stack_a;
-	int				*stack_b;
-	int				*temp_stack;
-}t_vars;
+	int	j;
+	int	temp;
 
-int		argv_check(int argc, char **argv);
-void	init_stacks(t_vars *master, int argc, char **argv);
-void	order_temp_stack(t_vars *master, int argc);
-
-#endif
+	j = 0;
+	while (++j < (argc - 1))
+	{
+		if (master->temp_stack[j] < master->temp_stack[j - 1])
+		{
+			temp = master->temp_stack[j];
+			master->temp_stack[j] = master->temp_stack[j - 1];
+			master->temp_stack[j - 1] = temp;
+			j = 0;
+		}
+	}
+}

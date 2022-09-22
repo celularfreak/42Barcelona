@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 21:23:21 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/20 21:45:13 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:09:39 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	init_stacks(t_vars *master, int argc, char **argv)
 		exit(0);
 	while (argc > 1)
 	{
-		master->stack_a[i] = ft_atoi(argv[i + 1]);
-		master->stack_b[i] = ft_atoi(argv[i + 1]);
+		master->temp_stack[i] = ft_atoi(argv[i + 1]);
 		argc--;
 		i++;
 	}
