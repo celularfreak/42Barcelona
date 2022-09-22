@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order_temp_stack.c                                 :+:      :+:    :+:   */
+/*   index_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:09:59 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/22 19:43:18 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:46:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	order_temp_stack(t_vars *master)
+void	index_stack(t_vars *master)
 {
 	int	i;
 	int	j;

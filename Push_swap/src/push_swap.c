@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/22 19:42:06 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:54:37 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	if (argv_check(argc, argv) == 1)
-		exit(0);
+		return (0);
 	init_stacks(&master, argc, argv);
-	order_temp_stack(&master);
+	index_stack(&master);
 	while (i < (argc - 1))
 	{
 		printf("%d ", master.stack_a[i]);

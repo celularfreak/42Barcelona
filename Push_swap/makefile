@@ -6,12 +6,12 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/21 12:10:49 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/09/22 19:47:44 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS 	= src/push_swap.c src/argv_check.c src/init_stacks.c \
-			src/order_temp_stack.c
+			src/index_stack.c
 
 CFLAGS 	= -Wall -Wextra -Werror -MMD 
 
