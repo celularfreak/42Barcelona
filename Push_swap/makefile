@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/22 19:47:44 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/09/23 13:05:27 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ clean:
 
 fclean:		clean 
 			${RM} ${NAME} 
+			make fclean -C libft
 			
 re:			fclean all
 

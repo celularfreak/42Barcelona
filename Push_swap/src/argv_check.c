@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:24:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/22 20:06:28 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:30:50 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,25 @@ static int	check_doubles(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	x;
-	int y;
+	int	temp;
 
 	i = 1;
-	x = 0;
-	y = 0;
-	while (x < argc -1)
+	temp = argc;
+	while (i < temp - 1)
 	{
 		j = 1;
-		while (y < argc -1)
+		argc = temp;
+		while (argc > 1)
 		{
 			if (ft_strcmp(argv[i], argv[j]) == 0 && i != j)
 			{
 				write(1, "Error", 5);
 				return (1);
 			}
-			y--;
+			argc--;
 			j++;
 		}
-		x--;
+		argc--;
 		i++;
 	}
 	return (0);
