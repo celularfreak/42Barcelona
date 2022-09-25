@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 21:23:21 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/23 12:36:50 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/26 00:18:21 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ void	init_stacks(t_vars *master, int argc, char **argv)
 	master->stack_a = ft_calloc((argc - 1), sizeof(int));
 	master->stack_b = ft_calloc((argc - 1), sizeof(int));
 	master->temp_stack = ft_calloc((argc - 1), sizeof(int));
-	master->temp_stack_b = ft_calloc((argc - 1), sizeof(int));
-	if (!master->stack_a || !master->stack_b || !master->temp_stack || !master->temp_stack_b)
+	if (!master->stack_a || !master->stack_b || !master->temp_stack)
 		exit(0);
 	while (temp > 0)
 	{
 		master->temp_stack[i] = ft_atoi(argv[i + 1]);
-		master->temp_stack_b[i] = ft_atoi(argv[i + 1]);
 		temp--;
 		i++;
 	}

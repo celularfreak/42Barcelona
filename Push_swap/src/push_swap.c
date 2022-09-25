@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/23 12:43:41 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/26 00:18:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	main(int argc, char **argv)
 		return (0);
 	init_stacks(&master, argc, argv);
 	index_stack(&master, argc);
-	//order_temp_stack(&master, argc);
 	while (i < (argc - 1))
 	{
-		//printf("%d", master.temp_stack[i]);
 		printf("%d\n", master.stack_a[i]);
 		i++;
 	}
