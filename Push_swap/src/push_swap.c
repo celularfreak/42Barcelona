@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/28 14:59:12 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/28 21:58:25 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,28 @@ int	main(int argc, char **argv)
 		return (0);
 	init_stacks(&master, argc, argv);
 	sort_stack(&master);
+	write(1, "Los indices antes de ordenar ", 29);
+	while (i < master.stack_size)
+	{
+		ft_putnbr_fd(master.stack_a[i], 1);
+		ft_putchar_fd(' ', 1);
+		i++;
+	}
+	ft_putchar_fd('\n', 1);
 	if (argc == 4)
 		sort_three(&master);
-	/*else if (argc == 5)
-		sort_four(&master);
-	else if (argc == 6)
+	//else if (argc == 5)
+		//sort_four(&master);
+	/*else if (argc == 6)
 		sort_five(&master);
 	else
 		sort_big(&master);*/
-	while (i < (master.stack_size))
+	i = 0;
+	write(1, "Los indices despues de ordenar ", 31);
+	while (i < master.stack_size)
 	{
-		printf("%d\n", master.stack_a[i]);
+		ft_putnbr_fd(master.stack_a[i], 1);
+		ft_putchar_fd(' ', 1);
 		i++;
 	}
 	return (0);

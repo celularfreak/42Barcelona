@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/28 15:03:14 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/28 21:58:10 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	rrr(t_vars *master);
 void	pa(t_vars *master);
 void	pb(t_vars *master);
 void	sort_three(t_vars *master);
+//void	sort_four(t_vars *master);
 
 #endif
