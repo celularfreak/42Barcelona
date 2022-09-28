@@ -6,15 +6,15 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:36:25 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/27 16:37:56 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:02:51 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap(int value1, int value2)
+void	swap(int *value1, int *value2)
 {
 	int	temp;
 
-	temp = value1;
-	value1 = value2;
-	value2 = temp;
+	temp = *value1;
+	*value1 = *value2;
+	*value2 = temp;
 }

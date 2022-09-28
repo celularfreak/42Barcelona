@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:38:51 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/27 17:39:37 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:09:17 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	pb(t_vars *master)
 {
-	swap(master->stack_a[0], master->stack_b[0]);
+	swap(&master->stack_a[0], &master->stack_b[0]);
 	write(1, "pb\n", 3);
 }
