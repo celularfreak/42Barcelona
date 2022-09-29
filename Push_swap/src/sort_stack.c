@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:09:59 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/28 12:41:22 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:49:58 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	sort_stack(t_vars *master)
 	cont_g = 0;
 	cont_p = 0;
 	nbr = 1;
-	while (cont_g < master->stack_size)
+	while (cont_g < master->stack_t_size)
 	{
 		cont_p = 0;
 		nbr = 1;
-		while (cont_p < master->stack_size)
+		while (cont_p < master->stack_t_size)
 		{
 			if ((master->temp_stack[cont_p] < master->temp_stack[cont_g]))
 				nbr++;

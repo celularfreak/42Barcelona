@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   select_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 21:51:24 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/29 11:54:14 by dnunez-m         ###   ########.fr       */
+/*   Created: 2022/09/29 08:45:50 by dnunez-m          #+#    #+#             */
+/*   Updated: 2022/09/29 10:53:35 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_four(t_vars *master)
+void	select_algorithm(t_vars *master)
 {
-	int	i;
-
-	i = 0;
-	if (master->stack_a[0] == master->min)
-		pb(master);
-	/*if (master->stack_a[0] > master->stack_a[1] && master->stack_a[1] < master->stack_a[2] && master->stack_a[1] < master->stack_a[3])
-		{
-			sa(master);
-			pb(master);
-		}
-	sort_three(master);
-	pa(master);*/
+	if (master->stack_a_size == 2)
+		sort_two(master);
+	if (master->stack_a_size == 3)
+		sort_three(master);
+	else if (master->stack_a_size == 4)
+		sort_four(master);
+	//else if (master->stack_size == 5)
+		//sort_five(master);
+	//else if (master->stack_size > 5)
+		//sort_big(master);
 }
