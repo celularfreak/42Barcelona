@@ -6,7 +6,7 @@
 #    By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 10:32:52 by dnunez-m          #+#    #+#              #
-#    Updated: 2022/09/29 10:26:43 by dnunez-m         ###   ########.fr        #
+#    Updated: 2022/10/03 09:46:04 by dnunez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS 	= src/push_swap.c src/argv_check.c src/init_stacks.c \
 			src/sort_stack.c src/check_order.c src/select_algorithm.c \
 			src/pa.c src/pb.c src/ra.c src/rb.c src/rr.c src/rra.c src/rrb.c \
 			src/rrr.c src/sa.c src/sb.c src/ss.c src/swap_values.c src/sort_two.c \
-			src/sort_three.c src/sort_four.c \
+			src/sort_three.c src/sort_four.c src/sort_five.c \
 			
 CFLAGS 	= -Wall -Wextra -Werror -MMD 
 

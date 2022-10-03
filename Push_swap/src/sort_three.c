@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:57:26 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/28 15:33:19 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/10/03 09:41:51 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ void	sort_three(t_vars *master)
 		&& master->stack_a[0] > master->stack_a[2])
 		rra(master);
 }
-
