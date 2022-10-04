@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/10/03 09:44:40 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/10/04 12:48:06 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include "libft.h"
 
 typedef struct s_vars
 {
@@ -26,6 +27,7 @@ typedef struct s_vars
 	int				stack_b_size;
 	int				stack_t_size;
 	int				min;
+	int				max;
 }t_vars;
 
 int		argv_check(int argc, char **argv);
@@ -47,7 +49,6 @@ void	pa(t_vars *master);
 void	pb(t_vars *master);
 void	sort_two(t_vars *master);
 void	sort_three(t_vars *master);
-void	sort_four(t_vars *master);
-void	sort_five(t_vars *master);
+void	sort_max_five(t_vars *master);
 
 #endif
