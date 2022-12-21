@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:23:07 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/15 16:30:31 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:41 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ int	free_exit(t_vars *master)
 	while (master->map[i] != NULL)
 		free(master->map[i++]);
 	free (master->map);
-	exit(1);
+	exit(0);
 }

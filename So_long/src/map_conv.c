@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:24:37 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/09/15 16:20:11 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:10:28 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,5 @@ char	**map_opp(char *orig_map)
 void	error_msg(char *err)
 {
 	ft_printf("Error: %s\n", err);
+	exit(0);
 }
