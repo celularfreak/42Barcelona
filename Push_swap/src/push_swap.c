@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/11/08 20:32:10 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:30:22 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ int	main(int argc, char **argv)
 	}
 	ft_putchar_fd('\n', 1);*/
 	select_algorithm(&master);
-	/*i = 0;
+	int i;
+	i = 0;
 	write(1, "Los indices despues de ordenar ", 31);
 	while (i < master.stack_a_size)
 	{
 		ft_putnbr_fd(master.stack_a[i], 1);
 		ft_putchar_fd(' ', 1);
 		i++;
-	}*/
+	}
 	exit(0);
 	return (0);
 }
