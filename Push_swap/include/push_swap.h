@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:20:58 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/30 13:58:22 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/01/30 20:08:43 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_vars
 	int				*temp_stack;
 	int				stack_a_size;
 	int				stack_b_size;
-	int				stack_t_size;
 	int				min;
 	int				max;
 }t_vars;
