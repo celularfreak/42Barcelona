@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:43:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/30 21:11:44 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:24:23 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void sort_big(t_vars *master)
 	int num;
 	
 	size = master->stack_a_size;
-	max_num = size - 1;
+	max_num = size;
 	max_bits = 0;
 	i = 0;
 	while ((max_num >> max_bits) != 0)
-		max_bits++;
+		++max_bits;
 	while(i < max_bits)
 	{
 		j = 0;
@@ -37,9 +37,9 @@ void sort_big(t_vars *master)
 				ra(master);
 			else
 				pb(master);
-			j++;
+			++j;
 		}
-		i++;
+		++i;
 		while(master->stack_b_size != 0)
 			pa(master);
 	}
