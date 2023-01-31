@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 08:22:23 by dnunez-m          #+#    #+#             */
-/*   Updated: 2022/10/04 12:14:29 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:30:45 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	check_order(t_vars *master)
 	}
 	if (cont == i)
 	{
-		//write(1, "La cadena ya esta ordenada", 26);
 		exit(0);
 	}
 }
