@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:43:33 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/31 10:24:23 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:50:42 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 
 void sort_big(t_vars *master)
 {
-	int size;
 	int max_num;
 	int max_bits;
-	int i;
-	int j;
+	int k[2];
 	int num;
 	
-	size = master->stack_a_size;
-	max_num = size;
+	max_num = master->stack_a_size;
 	max_bits = 0;
-	i = 0;
+	k[0] = -1;
 	while ((max_num >> max_bits) != 0)
 		++max_bits;
-	while(i < max_bits)
+	while(++k[0] < max_bits)
 	{
-		j = 0;
-		while (j < size)
+		k[1] = -1;
+		while (++k[1] < master->stack_a_size)
 		{
 			num = master->stack_a[0];
-			if (((num >> i) & 1) == 1)
+			if (((num >> k[1]) & 1) == 1)
 				ra(master);
 			else
 				pb(master);
-			++j;
 		}
-		++i;
 		while(master->stack_b_size != 0)
 			pa(master);
 	}

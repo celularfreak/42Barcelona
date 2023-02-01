@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:24:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/31 17:09:41 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/01 11:12:11 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,24 @@ static int	check_doubles(int argc, char **argv)
 static int	check_valid_arg(int argc, char **argv)
 {
 	int		i;
-	int		temp;
-	char	*temp2;
+	int		text_to_int;
+	char	*int_to_text;
 	
 	i = 1;
 	while (argc > 1)
 	{
-		temp = ft_atoi(argv[i]);
-		temp2 = ft_itoa(temp);
-		if (ft_strcmp(argv[i], temp2) != 0)
+		text_to_int = ft_atoi(argv[i]);
+		int_to_text = ft_itoa(text_to_int);
+		if (ft_strcmp(argv[i], int_to_text) != 0)
 		{
 			write(2, "Error\n", 6);
-			free(temp2);
+			free(int_to_text);
 			return (1);
 		}
 		argc--;
 		i++;
 	}
-	free(temp2);
+	free(int_to_text);
 	return (0);
 }
 

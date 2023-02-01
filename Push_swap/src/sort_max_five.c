@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:51:24 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/31 10:21:37 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/01 11:14:19 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	sort_max_five(t_vars *master)
 			ra(master);
 	}
 	pb(master);
-	min++;
 	while (master->stack_a[0] != max)
 	{
 		if (master->stack_a[max - 1] == max || master->stack_a[max - 2] == max)
@@ -36,7 +35,6 @@ void	sort_max_five(t_vars *master)
 			ra(master);
 	}
 	pb(master);
-	max--;
 	sort_three(master);
 	pa(master);
 	ra(master);
