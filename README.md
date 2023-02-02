@@ -9,10 +9,12 @@ Libft
 
 PrintF
 
-Getnextline
+GetNextNine
 
-Borntoberoot
+BornToBeRoot
 
 Minitalk
 
 So_long
+
+Push_Swap
