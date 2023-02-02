@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:37:22 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/01/30 20:36:44 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:02:26 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	pa(t_vars *master)
 	i = 0;
 	while (i <= master->stack_b_size - 1)
 	{
-		master->stack_b[i] =master->stack_b[i + 1];
+		master->stack_b[i] = master->stack_b[i + 1];
 		i++;
 	}
 	write(1, "pa\n", 3);

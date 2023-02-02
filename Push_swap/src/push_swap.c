@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:21:57 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/02/01 11:03:47 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:02:38 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main(int argc, char **argv)
 {
 	t_vars	master;
-	
+
 	if (argc == 1)
 		exit (0);
 	if (argv_check(argc, argv) == 1)

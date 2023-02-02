@@ -6,7 +6,7 @@
 /*   By: dnunez-m <dnunez-m@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:24:53 by dnunez-m          #+#    #+#             */
-/*   Updated: 2023/02/01 11:12:11 by dnunez-m         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:01:51 by dnunez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	check_valid_arg(int argc, char **argv)
 	int		i;
 	int		text_to_int;
 	char	*int_to_text;
-	
+
 	i = 1;
 	while (argc > 1)
 	{
@@ -64,14 +64,15 @@ static int	check_valid_arg(int argc, char **argv)
 		int_to_text = ft_itoa(text_to_int);
 		if (ft_strcmp(argv[i], int_to_text) != 0)
 		{
-			write(2, "Error\n", 6);
 			free(int_to_text);
+			write(2, "Error\n", 6);
 			return (1);
 		}
+		free(int_to_text);
 		argc--;
 		i++;
 	}
-	free(int_to_text);
+	i = 0;
 	return (0);
 }
 
